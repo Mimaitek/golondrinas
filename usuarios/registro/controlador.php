@@ -79,7 +79,7 @@ function agregarUsuario($usuario, $email, $passHash){
 /** Con esta función lo que hago es comprobar que no existe en la base de datos un usuario
  * o un email duplicado.
  * 
- */ 
+ */
           function compruebaRegistro($usuario, $email){
             /*Hacemos que con trim se eliminen las ""
             * para que en caso de que introduzca " " (con espacio) ésto no sea validado.*/
