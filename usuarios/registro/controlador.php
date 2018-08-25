@@ -27,33 +27,9 @@ function verificarUsuario($usuario){
   }
 }
 
-/*Verificamos la contraseña mostrando que tenga al menos 4 caracteres o que no esté vacío*/ 
-function verificarContrasena($contrasena){
-  $passLongitud = strlen($contrasena);
-          if($passLongitud<4 OR $passLongitud!=""){
-            addMensaje("La contraseña debe contener al menos 4 caracteres");
-            return false;
-          }else{
-            return true;
-          }
-
-}
 
 
- /** Con esta función lo que quiero comprobar es que la contraseña es correcta ya que previamente
-      * he utilizado la función password_hash(); para codificar la contraseña-
-     */
-   function compruebaContrasena($contrasena, $passHash){
-      if(verificarContrasena){
-          if(compruebapass($contrasena)){
-             return password_verify($contrasena, $passHash);
-          }
-      }else{
-        return false;
-      }
-      
-       
-    }
+ 
 
     
 /** Con esta función lo que hago es comprobar que los datos enviados por el usuario sean correctos y 
@@ -79,7 +55,7 @@ function agregarUsuario($usuario, $email, $passHash){
 /** Con esta función lo que hago es comprobar que no existe en la base de datos un usuario
  * o un email duplicado.
  * 
- */ 
+ */
           function compruebaRegistro($usuario, $email){
             /*Hacemos que con trim se eliminen las ""
             * para que en caso de que introduzca " " (con espacio) ésto no sea validado.*/
@@ -102,8 +78,32 @@ function agregarUsuario($usuario, $email, $passHash){
              return false;
           }
         }
+        /*Verificamos la contraseña mostrando que tenga al menos 4 caracteres o que no esté vacío*/ 
+function verificarContrasena($contrasena){
+  $longitud = strlen($contrasena);
+          if($longitud<5){
+            addMensaje("La contraseña debe contener al menos 5 caracteres");
+          }else{
+            return true;
+          }
 
+}
+
+
+     /** Con esta función lo que quiero comprobar es que la contraseña es correcta ya que previamente
+      * he utilizado la función password_hash(); para codificar la contraseña-
+     */
+   function compruebaContrasena($contrasena, $passHash){
+    if(verificarContrasena){
+        if(compruebapass($contrasena)){
+           return password_verify($contrasena, $passHash);
+        }
+    }else{
+      return false;
+    }
+    
      
+  }
 
 
          
@@ -117,10 +117,10 @@ function agregarUsuario($usuario, $email, $passHash){
                 $passHash = password_hash($contrasena, PASSWORD_BCRYPT); //Función para cifrar contraseña.
                 
                
-                  if(compruebaRegistro($usuario,$email)){
+                  if(compruebaRegistro($usuario,$email) AND  verificarContrasena($contrasena)){
                     agregarUsuario($usuario,$email,$passHash);
                     addMensaje("Registro completado");
-                    Header('Location: URL');
+                    
                   }
                   
                  
