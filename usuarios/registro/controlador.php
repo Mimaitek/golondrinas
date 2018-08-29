@@ -33,11 +33,6 @@ function verificarUsuario($usuario){
       
   }
 
-
-
-
- 
-
     
 /** Con esta función lo que hago es comprobar que los datos enviados por el usuario sean correctos y 
  * que además sean insertados correctamente en la base de datos.
@@ -55,8 +50,6 @@ function agregarUsuario($usuario, $email, $passHash){
         mysqli_close($conexion);
      }
   
-
-
   
 
 /** Con esta función lo que hago es comprobar que no existe en la base de datos un usuario
@@ -87,7 +80,8 @@ function agregarUsuario($usuario, $email, $passHash){
         }
 
 
-        /*Verificamos la contraseña mostrando que tenga al menos 5 caracteres o que no esté vacío*/ 
+ /*Verificamos la contraseña mostrando que tenga al menos 5 caracteres o que no esté vacío*/ 
+
 function verificarContrasena($contrasena){
   $longitud = strlen($contrasena);
           if($longitud<5){
@@ -101,20 +95,6 @@ function verificarContrasena($contrasena){
 
 
 
-     /** Con esta función lo que quiero comprobar es que la contraseña es correcta ya que previamente
-      * he utilizado la función password_hash(); para codificar la contraseña-
-     */
-   function compruebaContrasena($contrasena, $passHash){
-    if(verificarContrasena){
-        if(compruebapass($contrasena)){
-           return password_verify($contrasena, $passHash);
-        }
-    }else{
-      return false;
-    }
-    
-     
-  }
 
 
          
