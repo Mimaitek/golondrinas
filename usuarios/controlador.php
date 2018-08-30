@@ -6,13 +6,13 @@
         require_once('registro/controlador.php');
       }
       if(RUTA_ACTUAL == '/perfil/'){
-        require_once('perfil/template.php');
+        require_once('perfil/controlador.php');
       }
       if(RUTA_ACTUAL == '/logout/'){
-        addMensaje("Sesión cerrada con éxtio");
         $_SESSION["usuario"]="";
         Header('Location: '.$_SERVER['PHP_SELF']);
       }
+    
 
 
 

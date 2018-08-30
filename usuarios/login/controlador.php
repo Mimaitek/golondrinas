@@ -3,56 +3,73 @@
 
 <?php
 
- /** Con esta función lo que quiero comprobar es que la contraseña es correcta ya que previamente
-      * he utilizado la función password_hash(); para codificar la contraseña-
-     */
-    function compruebaContrasena($contrasena, $passHash){
-        return password_verify($contrasena, $passHash);
-         
-      }
+//Informamos que los campos están vacíos.
+function existeDatos($usuario, $contrasena){
+    if($usuario =="" OR $contrasena ==""){
+        addMensaje("No existen datos");
+        return false;
+    }else{
+        return true;
+    }
+}
 
-function compruebaUsuario($usuario,$passHash){
+
+
+
+
+function compruebaUsuario($usuario){
 
     $conexion = getConexion();
-    $consulta = "SELECT * FROM usuarios WHERE usuario='$usuario' AND contrasena='$passHash';";
+    $consulta = "SELECT * FROM usuarios WHERE usuario='$usuario';";
     $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea");
-    
-    while($fila = mysqli_fetch_array($resultado)){
-        $user = $fila["usuario"];
-        $pass = $fila["contrasena"];
-      
+    echo $consulta."<br>";
 
-        if($user != $usuario){
-            addError("Datos  incorrectos, verifique la información");
-            
-        }
-        if( $pass != $passHash ){
-            echo "contraseña incorrecta";
-        }
-        
-        if($user AND $pass){
-            addMensaje("Login completado");
-            $_SESSION["usuario"] = $user;
-            Header('Location: '.$_SERVER['PHP_SELF']);
-        }
-          mysql_free_result($resultado);
-    } 
-  
-    
+    if ($resultado){
+        while ($row = mysqli_fetch_assoc($resultado)) {
+             $row["usuario"];
+             $row["contrasena"];
+             $usuario = $row["usuario"];
+             $pass = $row["contrasena"];
 
-    
+        $contrasena = $_POST["contrasena"];
+
+        if(password_verify($contrasena, $pass)){
+            echo "Password correcto";
+            return true;
+        }else{
+            return false;
+            echo "Contraseña inválida";
+        }
+
+    }
+ }
+ mysqli_free_result($resultado);
 }
+    
+
+    
+
 if(($_SERVER['REQUEST_METHOD'])== "POST"){
 
-    $usuario = $_POST["usuario"];
-    $contrasena = $_POST["contrasena"];
-    $passHash = password_hash($contrasena, PASSWORD_BCRYPT); //Función para cifrar contraseña.
+     $usuario = $_POST["usuario"];
+     $contrasena = $_POST["contrasena"];
+     
+    
 
     
-    compruebaUsuario($usuario,$passHash);
+       if(compruebaUsuario($usuario)){
+        addMensaje("Login completado");
+        $_SESSION["usuario"] = $usuario;
+        Header('Location: '.$_SERVER['PHP_SELF']);
+        }else{
+            addError("Error de login");
+        }
+    }
+
+    
    
     
-}
+
 
 
 include("template.php");
