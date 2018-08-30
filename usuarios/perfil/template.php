@@ -1,7 +1,11 @@
-
+<?php
+if (!isset($_SESSION)) {
+  session_start();
+}
+?>
   <div class="container container-registro">
 
-      <h2>Bienvenido a tu perfil <?php echo $usuario; ?></h2>
+      <h2>Bienvenido a tu perfil </h2>
       <form action="#" method="POST">
           <div class="container">
               <div class="row">

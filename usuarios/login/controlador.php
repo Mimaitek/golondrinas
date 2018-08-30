@@ -63,11 +63,13 @@ if(($_SERVER['REQUEST_METHOD'])== "POST"){
         Header('Location: '.$_SERVER['PHP_SELF']);
         }else{
             addError("Error de login");
+        }
     }
+
     
    
     
-}
+
 
 
 include("template.php");
