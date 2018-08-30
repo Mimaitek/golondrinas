@@ -59,17 +59,13 @@ if(($_SERVER['REQUEST_METHOD'])== "POST"){
     
        if(compruebaUsuario($usuario)){
         addMensaje("Login completado");
+        $_SESSION["usuario"] = $usuario;
+        Header('Location: '.$_SERVER['PHP_SELF']);
         }else{
             addError("Error de login");
     }
     
-    /*
-        if( $usuario AND $pass){
-            $_SESSION["usuario"] = $user;
-            Header('Location: '.$_SERVER['PHP_SELF']);
-        }else{
-            addError("Error de login");
-        }*/
+   
     
 }
 
