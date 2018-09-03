@@ -10,6 +10,15 @@ h1{
 .fondo-registro{
     background-image: url('/usuarios/registro/usuarios1.jpg');
 }
+
+.fondo-perfil{
+    background-image: url('/usuarios/perfil/fondoperfil.jpg');
+    padding:10px;
+}
+.fondo-perfil label, .fondo-perfil h1{
+    color:white;
+}
+
 .container-registro {
     padding:40px;
     padding-top:20px;

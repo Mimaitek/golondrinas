@@ -17,6 +17,9 @@
       echo "
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"/login/\">Accede</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='/registro/'>Registro</a>
       </li>";
 
     } else {
@@ -24,13 +27,11 @@
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"/logout/\">logout " . $_SESSION["usuario"] . "</a>
       </li>";
-      addMensaje('Bienvenido a Genios del Marketing ' .$_SESSION["usuario"]);
+      
 
     }
     ?>
-      <li class="nav-item">
-        <a class="nav-link" href="/registro/">Registro</a>
-      </li>
+      
       <li class="nav-item">
         <a class="nav-link" href="/perfil/">Editar perfil</a>
       </li>
