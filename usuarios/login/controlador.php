@@ -22,7 +22,7 @@ function compruebaUsuario($usuario){
     $conexion = getConexion();
     $consulta = "SELECT * FROM usuarios WHERE usuario='$usuario';";
     $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea");
-    echo $consulta."<br>";
+    
 
     if ($resultado){
         while ($row = mysqli_fetch_assoc($resultado)) {
