@@ -26,15 +26,16 @@
       echo "
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"/logout/\">logout " . $_SESSION["usuario"] . "</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='/perfil/'>Editar perfil</a>
       </li>";
       
 
     }
     ?>
       
-      <li class="nav-item">
-        <a class="nav-link" href="/perfil/">Editar perfil</a>
-      </li>
+      
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>

@@ -6,7 +6,11 @@
         require_once('registro/controlador.php');
       }
       if(RUTA_ACTUAL == '/perfil/'){
-        require_once('perfil/controlador.php');
+        if(!($_SESSION["usuario"])){
+          header("Location: /login/");
+        }else{
+          require_once('perfil/controlador.php');
+        }
       }
       if(RUTA_ACTUAL == '/logout/'){
         $_SESSION["usuario"]="";
