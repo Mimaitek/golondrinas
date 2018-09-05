@@ -10,7 +10,7 @@
         <a class="nav-link" href="#">Genios Del Marketing <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Subir Productos</a>
+        <a class="nav-link" href="/productos/">Productos</a>
       </li>
     <?php
     if(!estasLogado()) {

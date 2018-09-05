@@ -16,7 +16,9 @@
         $_SESSION["usuario"]="";
         Header('Location: '.$_SERVER['PHP_SELF']);
       }
-    
+      if(RUTA_ACTUAL == '/productos/'){
+        require('productos/controlador.php');
+      }
 
 
 
