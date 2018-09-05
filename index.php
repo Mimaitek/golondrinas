@@ -49,6 +49,9 @@ define('RUTA_ACTUAL', $_SERVER['REQUEST_URI']);
       if(RUTA_ACTUAL == '/logout/'){
         require_once('usuarios/controlador.php');
       }
+      if(RUTA_ACTUAL == '/productos/'){
+        require_once('usuarios/controlador.php');
+      }
       
     ?>
     <?php include("utiles.php");?>

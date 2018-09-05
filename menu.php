@@ -10,30 +10,32 @@
         <a class="nav-link" href="#">Genios Del Marketing <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Subir Productos</a>
+        <a class="nav-link" href="/productos/">Productos</a>
       </li>
     <?php
     if(!estasLogado()) {
       echo "
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"/login/\">Accede</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='/registro/'>Registro</a>
       </li>";
 
     } else {
       echo "
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"/logout/\">logout " . $_SESSION["usuario"] . "</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='/perfil/'>Editar perfil</a>
       </li>";
-      addMensaje('Bienvenido a Genios del Marketing ' .$_SESSION["usuario"]);
+      
 
     }
     ?>
-      <li class="nav-item">
-        <a class="nav-link" href="/registro/">Registro</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/perfil/">Editar perfil</a>
-      </li>
+      
+      
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
