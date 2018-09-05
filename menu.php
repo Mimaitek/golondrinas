@@ -9,9 +9,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Genios Del Marketing <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/productos/">Productos</a>
-      </li>
+      
     <?php
     if(!estasLogado()) {
       echo "
@@ -29,6 +27,9 @@
       </li>
       <li class='nav-item'>
         <a class='nav-link' href='/perfil/'>Editar perfil</a>
+      </li>
+      <li class='nav-item'>
+        <a class='nav-link' href='/productos/'>Productos</a>
       </li>";
       
 
