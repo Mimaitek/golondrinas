@@ -1,70 +1,55 @@
-<div class="container">
-    <form>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-group">
-        <label for="exampleSelect1">Example select</label>
-        <select class="form-control" id="exampleSelect1">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="exampleSelect2">Example multiple select</label>
-        <select multiple class="form-control" id="exampleSelect2">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="exampleTextarea">Example textarea</label>
-        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-    </div>
-    <div class="form-group">
-        <label for="exampleInputFile">File input</label>
-        <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-        <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-    </div>
-    <fieldset class="form-group">
-        <legend>Radio buttons</legend>
-        <div class="form-check">
-        <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-            Option one is this and that&mdash;be sure to include why it's great
-        </label>
+<div class="fondo-productos">
+    <div class="container-productos">
+        <div class="row">
+            <div class="col-8">
+                <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="producto">Nombre del producto</label>
+                    <input type="text" class="form-control" id="producto" aria-describedby="Help" placeholder="">
+                    <small id="emailHelp" class="form-text text-muted">Introduce el nombre del producto.</small>
+                </div>
+                <div class="form-group">
+                    <label for="clasificacion">Tipo de Producto</label>
+                    <select class="form-control" id="productos">
+                    <option value="tecnologia">Tecnología</option>
+                    <option value="servicios">Servicios</option>
+                    <option value="alimentacion">Alimentación</option>
+                    <option value="ocio">Ocio</option>
+                    <option value="deportes">Deportes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleSelect2">Puntuación</label>
+                    <select multiple class="form-control" id="puntuacion">
+                    <option value="1">Pésimo</option>
+                    <option value="3">Malo</option>
+                    <option value="5">Regular</option>
+                    <option value="7">Bueno</option>
+                    <option value="10">Muy bueno</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleTextarea">Háblanos de él</label>
+                    <textarea class="form-control" id="comentarios" rows="3"></textarea>
+                    <small id="fileHelp" class="form-text text-muted">Describe y analiza al producto!!!</small>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Sube imágenes de la campaña de marketing</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">Sube imágenes de tu producto</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                </div>
+            
+            
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+             </div>
+            <div class="col-4">
+            <img src="/usuarios/productos/compras.png" alt="compras" width="400px" height="300px";/>
+             </div>
         </div>
-        <div class="form-check">
-        <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-            Option two can be something else and selecting it will deselect option one
-        </label>
-        </div>
-        <div class="form-check disabled">
-        <label class="form-check-label">
-            <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
-            Option three is disabled
-        </label>
-        </div>
-    </fieldset>
-    <div class="form-check">
-        <label class="form-check-label">
-        <input type="checkbox" class="form-check-input">
-        Check me out
-        </label>
+        
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
 </div>
