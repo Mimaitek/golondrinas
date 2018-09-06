@@ -1,6 +1,6 @@
 
 <div class="fondo-productos">
-<?php echo "<h1>" .$_SESSION["usuario"] . " Sube tus propios reviews </h1>"?>
+<?php echo "<h1>" .ucfirst($_SESSION["usuario"]) . " Sube tus propios reviews </h1>"?>
     <div class="container-productos">
         <div class="row">
             <div class="col-8">

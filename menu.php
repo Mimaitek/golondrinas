@@ -9,6 +9,11 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Genios Del Marketing <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item active" >
+        <a class="nav-link" href="#">Portada</a>
+      </li>
+      
+      
       
     <?php
     if(!estasLogado()) {
@@ -21,25 +26,57 @@
       </li>";
 
     } else {
-      echo "
-      <li class=\"nav-item\">
-        <a class=\"nav-link\" href=\"/logout/\">logout " . $_SESSION["usuario"] . "</a>
-      </li>
-      <li class='nav-item'>
-        <a class='nav-link' href='/perfil/'>Editar perfil</a>
-      </li>
-      <li class='nav-item'>
-        <a class='nav-link' href='/productos/'>Productos</a>
-      </li>";
+      echo 
+      "<div class=''>
+        <li class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>"
+              .  ucfirst($_SESSION["usuario"]);
+            echo   
+            "</a>
+            <div class='dropdown-menu' aria-labelledby='navbarDropdown'>
+              <a class='dropdown-item' href='/productos/'>Subir Productos</a>
+              <a class='dropdown-item' href='/perfil/'> Editar perfil</a>";
+            echo
+              "<div class='dropdown-divider'></div>
+              <a class='dropdown-item' href=/logout/> Cierra tu sesion </a>
+              
+            </div>
+        </li>
+       </div>";
+
       
 
     }
     ?>
       
       
-      <li class="nav-item">
+      <li >
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-  </div>
-</nav>
+    </div>
+ </nav>
+    <ul class="nav justify-content-center">
+       <li class="nav-item">
+         <a class="nav-link active" href="#">Nuevos</a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="#">Populares</a>
+       </li>
+      <li class="nav-item">
+         <a class="nav-link" href="#">Más votadas</a>
+       </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Más
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Tecnología</a>
+          <a class="dropdown-item" href="#">Servicios</a>
+          <a class="dropdown-item" href="#">Alimentación</a>
+          <a class="dropdown-item" href="#">Ocio</a>
+          <a class="dropdown-item" href="#">Deportes</a>
+        </div>
+      </li>
+    </ul>
+  
