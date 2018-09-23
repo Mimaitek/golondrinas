@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-group">
                     <label for="clasificacion">Tipo de Producto</label>
-                    <select class="form-control" id="productos">
+                    <select class="form-control" id="clasificacion">
                     <option value="tecnologia">Tecnología</option>
                     <option value="servicios">Servicios</option>
                     <option value="alimentacion">Alimentación</option>
@@ -37,15 +37,15 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputFile">Sube imágenes de la campaña de marketing</label>
-                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                    <input type="file" class="form-control-file" id="marketing_foto" aria-describedby="fileHelp">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputFile">Sube imágenes de tu producto</label>
-                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                    <input type="file" class="form-control-file" id="producto_foto" aria-describedby="fileHelp">
                 </div>
             
             
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" id="enviar">Submit</button>
                 </form>
              </div>
             <div class="col-4">
