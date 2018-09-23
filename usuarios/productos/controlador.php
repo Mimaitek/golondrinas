@@ -131,6 +131,6 @@ if(validaDatos()){
      require("template2.php");
  }
  
- 
+}
 
 ?>
