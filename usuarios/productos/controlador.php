@@ -49,7 +49,11 @@ function validarClasificacion(){
 
 function validarPuntuacion(){
     $puntuacion = $_POST["puntuacion"];
-    if($puntuacion){
+    foreach ($puntuacion as $puntos){
+        $puntos = $puntos_producto;
+    }
+   
+    if($puntos_producto){
         return true;
     }else{
         return false;
@@ -109,7 +113,7 @@ function insertarProducto(){
 
 
 
- if(usuarioValido()){
+if(usuarioValido()){
     require("template.php");
     if(isset($_POST["enviar"])){
 
@@ -120,17 +124,15 @@ function insertarProducto(){
         $marketing_foto = $_POST["marketing_foto"];
         $producto_foto = $_POST["producto_foto"];
 
-if(validaDatos()){
-    insertarProducto();
-    addMensaje("Enhorabuena". ucfirst($_SESSION["usuario"])  . "Pronto subiremos tu publicación");
+        if(validaDatos()){
+            insertarProducto();
+            addMensaje("Enhorabuena". ucfirst($_SESSION["usuario"])  . "Pronto subiremos tu publicación");
 
-}
-
-        
- }else{
-     require("template2.php");
- }
- 
+        }
+    } 
+    
+} else {
+    require("template2.php");
 }
 
 ?>

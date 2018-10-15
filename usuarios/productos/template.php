@@ -4,7 +4,7 @@
     <div class="container-productos">
         <div class="row">
             <div class="col-8">
-                <form action="#" method="POST">
+                <form action="#" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="producto">Nombre del producto</label>
                     <input type="text" class="form-control" id="producto" aria-describedby="Help" placeholder="">
@@ -12,7 +12,7 @@
                 </div>
                 <div class="form-group">
                     <label for="clasificacion">Tipo de Producto</label>
-                    <select class="form-control" id="clasificacion">
+                    <select class="form-control" id="clasificacion" name="clasificacion[]">
                     <option value="tecnologia">Tecnología</option>
                     <option value="servicios">Servicios</option>
                     <option value="alimentacion">Alimentación</option>
@@ -21,8 +21,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleSelect2">Puntuación</label>
-                    <select multiple class="form-control" id="puntuacion">
+                    <label for="puntuacion">Puntuación</label>
+                    <select multiple class="form-control" id="puntuacion" name="puntuacion[]">
                     <option value="1">Pésimo</option>
                     <option value="3">Malo</option>
                     <option value="5">Regular</option>
