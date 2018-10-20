@@ -23,15 +23,15 @@
  }
 
 
-
+//Validaciones de los campos del formulario para que sean rellenados
 
 function validarProducto(){
     $producto = $_POST["producto"];
     if($producto!=""){
         return true;
     }else{
-        return false;
         addMensaje("Debe Incluir un nombre del producto");
+        return false;
     }
 
 }
@@ -41,31 +41,29 @@ function validarClasificacion(){
     if($clasificacion){
         return true;
     }else{
-        return false;
         addMensaje("Debe seleccionar un tipo de Producto");
+        return false;
+        
     }
 
 }
 
 function validarPuntuacion(){
     $puntuacion = $_POST["puntuacion"];
-    foreach ($puntuacion as $puntos){
-        $puntos = $puntos_producto;
-    }
-   
-    if($puntos_producto){
+    if($puntuacion != ""){
         return true;
     }else{
+        addMError("Debe seleccionar una puntuación");
         return false;
-        addMensaje("Debe seleccionar una puntuación");
+        
     }
 }
 
 function validarComentarios(){
-    $comentarios = strlen($_POST["comentarios"]);
-    if($comentarios<200 || $comentarios == ""){
-        return false;
+    $comentarios = ($_POST["comentarios"]);
+    if($comentarios == ""){
         addMensaje("Debe escribir al menos 200 caracteres");
+        return false;
     }else{
         return true;
     }
@@ -73,66 +71,147 @@ function validarComentarios(){
 }
 
 function validarMarketingFoto(){
-    $marketing_foto = $_POST["marketing_foto"];
-    if($marketing_foto){
-        return true;
-    }
 
+    return isset($_FILES["marketing_foto"]) && isset($_FILES["marketing_foto"]["name"]);
+
+    /*
+    array(5) { ["name"]=> string(28) "1680x1050-1268822-nebula.jpg" 
+        ["type"]=> string(10) "image/jpeg" 
+        ["tmp_name"]=> string(25) "/opt/lampp/temp/phpFr3j50" 
+        ["error"]=> int(0) 
+        ["size"]=> int(373368) }
+
+    function recogerValoresMarketingFoto(){
+
+        if(validarMarketingFoto()){
+            foreach($marketing_foto as $valor => $clave){
+
+            }
+        }
+
+    }
+*/
 }
 function validarProductoFoto(){
-    $producto_foto = $_POST["producto_foto"];
+    $producto_foto = $_FILES["producto_foto"];
     if($producto_foto){
         return true;
+    }else{
+        return false;
     }
 }
+
+function fechaHoy(){
+    $hoy = getdate();
+    $fecha = $hoy["mday"] . "/" . $hoy["mon"] . "/" . $hoy["year"];
+    return $fecha;
+}
+
+
 
 function validaDatos(){
-    if(validarProducto() && validarClasificacion() && validarPuntuacion() && validarComentarios() && validarMarketingFoto() && validarProductoFoto()){
+    if(validarProducto() && validarClasificacion() && validarPuntuacion() && validarComentarios()){
         return true;
     }else{
+        addError("compruebe datos");
         return false;
-        addError("Error en el formulario");
+        
     }
 }
 
-function insertarProducto(){
-    $conexion = getConexion();
-    $consulta = "INSERT productos (nombre, tipo_producto, puntuacion, comentarios, marketing_foto, producto_foto) VALUES ('$nombre', '$tipo_producto', '$puntuacion', '$comentarios', '$marketing_foto', '$producto_foto');";
+function insertarProducto($nombre, $tipo_producto, $puntuacion, $comentarios){
 
-    $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea");
+
+    $conexion = getConexion();
+    $consulta = "INSERT  INTO productos (nombre, tipo_producto, puntuacion, comentarios, id_usuario) VALUES ('$nombre', '$tipo_producto', '$puntuacion', '$comentarios', $id_usuario );";
+
+    $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
+
+    $last_id = mysql_insert_id($conexion);
 
     if($resultado){
-        return true;
+        return $last_id;
     }else{
-        return false;
         addError("Error en la inserción de datos");
+        return false;
+        
+    }
+}
+
+
+function aniadeFotoProducto($id_producto, $fichero, $tipo) {
+    $fecha = fechaHoy();
+
+    $nombre_fichero = $fichero["name"];
+    $ruta = $fichero["tmp_name"];
+    $bytes = $fichero["size"];
+
+    $fichero = fopen ($ruta, 'rb');
+
+    if($fichero) {
+        $contenido = fread($fichero, $bytes);
+        $conexion = getConexion();
+        $consulta = "INSERT INTO archivos_posts (tipo, fecha, nombre_archivo, contenido_archivo ) VALUES ('$tipo', '$fecha', '$nombre_fichero', '$contenido');";
+        $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
+
+          if ($resultado){
+              return true;
+          }else{
+              addError("No inserción de datos");
+          }
+        mysqli_close($conexion);
     }
 }
 
 
 
+    if(usuarioValido()){
+        require("template.php");
+        if(isset($_POST["enviar"])){
 
 
-if(usuarioValido()){
-    require("template.php");
-    if(isset($_POST["enviar"])){
+            
+            if(validaDatos()){
+                $producto = $_POST["producto"];
+                $clasificacion = $_POST["clasificacion"];
+                $puntuacion = $_POST["puntuacion"];
+                $comentarios = $_POST["comentarios"];
 
-        $producto = $_POST["producto"];
-        $clasificacion = $_POST["clasificacion"];
-        $puntuacion = $_POST["puntuacion"];
-        $comentarios = $_POST["comentarios"];
-        $marketing_foto = $_POST["marketing_foto"];
-        $producto_foto = $_POST["producto_foto"];
+                $marketing_foto = $_FILES["marketing_foto"];
+                $producto_foto = $_FILES["producto_foto"];
 
-        if(validaDatos()){
-            insertarProducto();
-            addMensaje("Enhorabuena". ucfirst($_SESSION["usuario"])  . "Pronto subiremos tu publicación");
+                $conexion = getConexion();
+                $id_usuario = $_SESSION["id_usuario"];
+                echo "<h1>" . $id_usuario . "</h1>"; 
+                $consulta = "INSERT INTO productos (nombre, tipo_producto, puntuacion, comentarios, id_usuario) VALUES ('$producto', '$clasificacion', '$puntuacion', '$comentarios', '$id_usuario');";
+                echo $consulta;
+                $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
+                $last_id = mysqli_insert_id($conexion);
 
-        }
-    } 
-    
-} else {
-    require("template2.php");
+        
+            // addMensaje("Enhorabuena". ucfirst($_SESSION["usuario"])  . "Pronto subiremos tu publicación");
+
+            // primero, guardar en la tabla producto el producto
+           
+            
+           
+
+            
+            // guardar, las imagenes, usando la funcion aniadeFotoProducto (hay que completarla!!!!)
+
+                aniadeFotoProducto($last_id, $_FILES["marketing_foto"], 'marketing');
+                aniadeFotoProducto($last_id, $_FILES["producto_foto"], 'real');
+
+            }else{
+                addError("Error en la inserción de datos");
+            }
+        
+
+
+        
+    } else {
+        require("template2.php");
+    }
 }
-
+    
 ?>

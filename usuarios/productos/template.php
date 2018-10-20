@@ -7,12 +7,13 @@
                 <form action="#" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="producto">Nombre del producto</label>
-                    <input type="text" class="form-control" id="producto" aria-describedby="Help" placeholder="">
+                    <input type="text" class="form-control" name="producto" aria-describedby="Help" placeholder="">
                     <small id="emailHelp" class="form-text text-muted">Introduce el nombre del producto.</small>
                 </div>
                 <div class="form-group">
                     <label for="clasificacion">Tipo de Producto</label>
-                    <select class="form-control" id="clasificacion" name="clasificacion[]">
+                    <select class="form-control" name="clasificacion">
+                    <option value="0">Seleccione el tipo de producto</option>
                     <option value="tecnologia">Tecnología</option>
                     <option value="servicios">Servicios</option>
                     <option value="alimentacion">Alimentación</option>
@@ -21,8 +22,9 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="puntuacion">Puntuación</label>
-                    <select multiple class="form-control" id="puntuacion" name="puntuacion[]">
+                <label for="puntuacion">Puntuación</label>
+                    <select class="form-control"  name="puntuacion">
+                    <option value="0">Seleccione una puntuación</option>
                     <option value="1">Pésimo</option>
                     <option value="3">Malo</option>
                     <option value="5">Regular</option>
@@ -31,21 +33,23 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="exampleTextarea">Háblanos de él</label>
-                    <textarea class="form-control" id="comentarios" rows="3"></textarea>
+                    <label for="comentarios">Háblanos de él</label>
+                    <textarea class="form-control" name="comentarios" rows="3"></textarea>
                     <small id="fileHelp" class="form-text text-muted">Describe y analiza al producto!!!</small>
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputFile">Sube imágenes de la campaña de marketing</label>
-                    <input type="file" class="form-control-file" id="marketing_foto" aria-describedby="fileHelp">
+                    <label for="marketing_foto">Sube imágenes de la campaña de marketing</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                    <input type="file" class="form-control-file" name="marketing_foto" aria-describedby="fileHelp">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputFile">Sube imágenes de tu producto</label>
-                    <input type="file" class="form-control-file" id="producto_foto" aria-describedby="fileHelp">
+                    <label for="producto_foto">Sube imágenes de tu producto</label>
+                    <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
+                    <input type="file" class="form-control-file" name="producto_foto" aria-describedby="fileHelp">
                 </div>
             
             
-                <button type="submit" class="btn btn-primary" id="enviar">Submit</button>
+                <button type="submit" class="btn btn-primary" name="enviar">Submit</button>
                 </form>
              </div>
             <div class="col-4">
