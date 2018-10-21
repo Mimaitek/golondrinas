@@ -1,3 +1,17 @@
+#formError{
+    color:red;
+    border: red double;
+   
+}
+#formValidado{
+    color: green;
+    border: green double;
+
+}
+
+
+
+
 *{
         font-family: 'Merienda', cursive;
         font-size: 18px;

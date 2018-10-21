@@ -22,17 +22,6 @@
                     </select>
                 </div>
                 <div class="form-group">
-                <label for="puntuacion">Puntuación</label>
-                    <select class="form-control"  name="puntuacion">
-                    <option value="0">Seleccione una puntuación</option>
-                    <option value="1">Pésimo</option>
-                    <option value="3">Malo</option>
-                    <option value="5">Regular</option>
-                    <option value="7">Bueno</option>
-                    <option value="10">Muy bueno</option>
-                    </select>
-                </div>
-                <div class="form-group">
                     <label for="comentarios">Háblanos de él</label>
                     <textarea class="form-control" name="comentarios" rows="3"></textarea>
                     <small id="fileHelp" class="form-text text-muted">Describe y analiza al producto!!!</small>
@@ -46,6 +35,7 @@
                     <label for="producto_foto">Sube imágenes de tu producto</label>
                     <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
                     <input type="file" class="form-control-file" name="producto_foto" aria-describedby="fileHelp">
+                    <span id="formError"></span>
                 </div>
             
             

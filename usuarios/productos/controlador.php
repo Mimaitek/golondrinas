@@ -2,6 +2,7 @@
 
 <?php
  
+//Comprobar si el usuario está registrado y si tiene permiso para subir productos.
 
  function usuarioValido(){
      $usuarioSesion = $_SESSION["usuario"];
@@ -30,7 +31,7 @@ function validarProducto(){
     if($producto!=""){
         return true;
     }else{
-        addMensaje("Debe Incluir un nombre del producto");
+        echo  '<span id="formError">Asigne un nombre al producto</span>';
         return false;
     }
 
@@ -41,28 +42,17 @@ function validarClasificacion(){
     if($clasificacion){
         return true;
     }else{
-        addMensaje("Debe seleccionar un tipo de Producto");
+        echo '<span id="formError">Seleccione una categoria</span>';
         return false;
         
     }
 
-}
-
-function validarPuntuacion(){
-    $puntuacion = $_POST["puntuacion"];
-    if($puntuacion != ""){
-        return true;
-    }else{
-        addMError("Debe seleccionar una puntuación");
-        return false;
-        
-    }
 }
 
 function validarComentarios(){
     $comentarios = ($_POST["comentarios"]);
     if($comentarios == ""){
-        addMensaje("Debe escribir al menos 200 caracteres");
+        echo '<span id="formError">Es necesario una pequeña reseña del producto</span>';
         return false;
     }else{
         return true;
@@ -97,10 +87,12 @@ function validarProductoFoto(){
     if($producto_foto){
         return true;
     }else{
+        echo '<span id="formError"> Es necesario subir una fotografía</span>';
         return false;
     }
 }
 
+// Funcion para incorporar la fecha
 function fechaHoy(){
     $hoy = getdate();
     $fecha = $hoy["mday"] . "/" . $hoy["mon"] . "/" . $hoy["year"];
@@ -110,20 +102,20 @@ function fechaHoy(){
 
 
 function validaDatos(){
-    if(validarProducto() && validarClasificacion() && validarPuntuacion() && validarComentarios()){
+    if(validarProducto() && validarClasificacion() && validarComentarios()){
         return true;
     }else{
-        addError("compruebe datos");
+        echo '<span id="formError">Existen problemas con su formulario</span>';
         return false;
         
     }
 }
 
-function insertarProducto($nombre, $tipo_producto, $puntuacion, $comentarios){
+function insertarProducto($nombre, $tipo_producto, $comentarios){
 
 
     $conexion = getConexion();
-    $consulta = "INSERT  INTO productos (nombre, tipo_producto, puntuacion, comentarios, id_usuario) VALUES ('$nombre', '$tipo_producto', '$puntuacion', '$comentarios', $id_usuario );";
+    $consulta = "INSERT  INTO productos (nombre, tipo_producto, comentarios, id_usuario) VALUES ('$nombre', '$tipo_producto','$comentarios', $id_usuario );";
 
     $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 
@@ -144,14 +136,14 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
 
     $nombre_fichero = $fichero["name"];
     $ruta = $fichero["tmp_name"];
+    $nueva_ruta = tempnam(sys_get_temp_dir(), $nombre_fichero);
     $bytes = $fichero["size"];
 
-    $fichero = fopen ($ruta, 'rb');
+    copy($ruta, $nueva_ruta);
 
     if($fichero) {
-        $contenido = fread($fichero, $bytes);
         $conexion = getConexion();
-        $consulta = "INSERT INTO archivos_posts (tipo, fecha, nombre_archivo, contenido_archivo ) VALUES ('$tipo', '$fecha', '$nombre_fichero', '$contenido');";
+        $consulta = "INSERT INTO archivo_productos (tipo, fecha,  nombre_archivo, contenido_archivo, productos_id) VALUES ('$tipo', STR_TO_DATE('$fecha', '%d/%m/%Y'), '$nombre_fichero', LOAD_FILE('$nueva_ruta'), '$id_producto');";
         $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
 
           if ($resultado){
@@ -174,7 +166,6 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
             if(validaDatos()){
                 $producto = $_POST["producto"];
                 $clasificacion = $_POST["clasificacion"];
-                $puntuacion = $_POST["puntuacion"];
                 $comentarios = $_POST["comentarios"];
 
                 $marketing_foto = $_FILES["marketing_foto"];
@@ -183,7 +174,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
                 $conexion = getConexion();
                 $id_usuario = $_SESSION["id_usuario"];
                 echo "<h1>" . $id_usuario . "</h1>"; 
-                $consulta = "INSERT INTO productos (nombre, tipo_producto, puntuacion, comentarios, id_usuario) VALUES ('$producto', '$clasificacion', '$puntuacion', '$comentarios', '$id_usuario');";
+                $consulta = "INSERT INTO productos (nombre, tipo_producto, comentarios, id_usuario) VALUES ('$producto', '$clasificacion', '$comentarios', '$id_usuario');";
                 echo $consulta;
                 $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
                 $last_id = mysqli_insert_id($conexion);
@@ -198,7 +189,6 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
 
             
             // guardar, las imagenes, usando la funcion aniadeFotoProducto (hay que completarla!!!!)
-
                 aniadeFotoProducto($last_id, $_FILES["marketing_foto"], 'marketing');
                 aniadeFotoProducto($last_id, $_FILES["producto_foto"], 'real');
 
@@ -209,9 +199,9 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
 
 
         
-    } else {
-        require("template2.php");
-    }
-}
+    } 
     
+}else {
+    require("template2.php");
+}
 ?>
