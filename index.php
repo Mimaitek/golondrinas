@@ -37,6 +37,9 @@ define('RUTA_ACTUAL', $_SERVER['REQUEST_URI']);
 
 
     <?php
+     if(RUTA_ACTUAL == '/'){
+      require_once('prod/controlador.php');
+    }
       if(RUTA_ACTUAL == '/login/'){
         require_once('usuarios/controlador.php');
       }
