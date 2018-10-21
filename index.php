@@ -50,7 +50,7 @@ define('RUTA_ACTUAL', $_SERVER['REQUEST_URI']);
         require_once('usuarios/controlador.php');
       }
       if(RUTA_ACTUAL == '/productos/'){
-        require_once('usuarios/controlador.php');
+        require_once('prod/controlador.php');
       }
       
     ?>

@@ -1,7 +1,7 @@
-
-
-
-
+<?php if (!isset($_SESSION)) {
+  session_start();
+}
+?>
 <div class="fondo-productos">
 <?php echo "<h1>" .$_SESSION["usuario"] . " No puedes subir tus reviews </h1>"?>
     <div class="container-productos">

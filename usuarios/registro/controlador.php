@@ -1,5 +1,5 @@
 
-<?php require_once(dirname(__FILE__)."/../conexion.php"); ?>
+<?php require_once(dirname(__FILE__)."/../../conexion.php"); ?>
 <?php
      
 
