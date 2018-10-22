@@ -140,12 +140,13 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
     $bytes = $fichero["size"];
 
     copy($ruta, $nueva_ruta);
+    chmod($nueva_ruta, 0644);
 
     if($fichero) {
         $conexion = getConexion();
-        $consulta = "INSERT INTO archivo_productos (tipo, fecha,  nombre_archivo, contenido_archivo, productos_id) VALUES ('$tipo', STR_TO_DATE('$fecha', '%d/%m/%Y'), '$nombre_fichero', LOAD_FILE('$nueva_ruta'), '$id_producto');";
+        $consulta = "INSERT INTO archivo_productos (productos_id, tipo, fecha,  nombre_archivo, contenido_archivo) VALUES ('$id_producto', '$tipo', STR_TO_DATE('$fecha', '%d/%m/%Y'), '$nombre_fichero', LOAD_FILE('$nueva_ruta'));";
         $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
-
+        
           if ($resultado){
               return true;
           }else{
@@ -173,9 +174,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
 
                 $conexion = getConexion();
                 $id_usuario = $_SESSION["id_usuario"];
-                echo "<h1>" . $id_usuario . "</h1>"; 
                 $consulta = "INSERT INTO productos (nombre, tipo_producto, comentarios, id_usuario) VALUES ('$producto', '$clasificacion', '$comentarios', '$id_usuario');";
-                echo $consulta;
                 $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
                 $last_id = mysqli_insert_id($conexion);
 

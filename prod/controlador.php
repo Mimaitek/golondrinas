@@ -5,6 +5,9 @@
       if(RUTA_ACTUAL == '/'){
         require('listaproductos/controlador.php');
       }
+      if(RUTA_ACTUAL == '/'){
+        require('detalleproductos/controlador.php');
+      }
  
  
 ?>

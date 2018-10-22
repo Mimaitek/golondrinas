@@ -17,7 +17,7 @@
              </div>
 
             <div class="col-4">
-            <img src="/usuarios/productos/compras.png" alt="compras" width="400px" height="300px";/>
+            <img src="/prod/crearproducto/compras.png" alt="compras" width="400px" height="300px";/>
              </div>
         </div>
         </form>

@@ -38,7 +38,6 @@ foreach(getProductos() as $producto){
     </div>
     <div class="row">
         <div class="col">
-        TEXTO DE PRUEBA
         </div>
         <div class="col-md-auto">
         Variable width content
@@ -48,6 +47,13 @@ foreach(getProductos() as $producto){
         '</div>
     </div>
     </div>';
+}
+
+
+
+foreach(getFoto() as $foto){
+  echo '<img src="data:image/png;base64,'.$foto. '" alt="imagen campaña marketing" height="300px"  width="400px" />';
+  echo "<hr>";
 }
 
 ?>

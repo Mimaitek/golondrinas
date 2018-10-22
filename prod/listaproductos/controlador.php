@@ -26,12 +26,25 @@ function getProductos(){
  mysqli_free_result($resultado);
 }
     
-function imprimirResultados(){
+function getFoto(){
 
+    $conexion = getConexion();
+    $consulta = "SELECT * FROM archivo_productos WHERE tipo='marketing'";
+    $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea");
 
+    $foto = array();
 
+    if ($resultado){
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            array_push($foto, base64_encode($row['contenido_archivo']));
+    }
 
+    return $foto;
+ }
+ mysqli_free_result($resultado);
 }
+    
+
 
 
 
