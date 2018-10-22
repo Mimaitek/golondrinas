@@ -1,9 +1,10 @@
 <?php if (!isset($_SESSION)) {
   session_start();
+
 }
 ?>
 <div class="fondo-productos">
-<?php echo "<h1>" .ucfirst($_SESSION["usuario"]) . " Sube tus propios reviews </h1>"?>
+<?php  echo "<h1>" .ucfirst($_SESSION["usuario"]) . " Sube tus propios reviews </h1>"?>
     <div class="container-productos">
         <div class="row">
             <div class="col-8">
@@ -46,7 +47,7 @@
                 </form>
              </div>
             <div class="col-4">
-            <img src="/usuarios/productos/compras.png" alt="compras" width="400px" height="300px";/>
+            <img src="/prod/crearproducto/compras.png" alt="compras" width="400px" height="300px";/>
              </div>
         </div>
         

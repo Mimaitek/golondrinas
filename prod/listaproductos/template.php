@@ -19,41 +19,40 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<div style="padding-bottom: 40px;">
+<h2>Lista de productos</h2>
+
+</div>'
 
 
+
+<div style="padding: 10px; float: left; width: 45%; text-align: justify;">
 <?php
+
 foreach(getProductos() as $producto){
     echo '<div class="container">
     <div class="row justify-content-md-center">
-        <div class="col col-lg-2">'.
+        <div class="col"><h5>Tipo de producto:</h5>'.
         $producto['tipo_producto'] .
-        
-        '</div>
-        <div class="col-md-auto">
-        Variable width content
-        </div>
-        <div class="col col-lg-2">'.
+       '<h5>Nombre:</h5>'. 
         $producto['nombre'] .
-        '</div>
-    </div>
-    <div class="row">
-        <div class="col">
-        </div>
-        <div class="col-md-auto">
-        Variable width content
-        </div>
-        <div class="col col-lg-2">'.
+        '<h5>Descripción:</h5>'.
+
         $producto['comentarios'] .
         '</div>
     </div>
-    </div>';
+    </div>
+    <div style="padding-bottom: 300px;"></div>';
 }
+?>
+</div>
 
-
-
+<div style=”padding: 10px; float: right; width: 45%; text-align: justify;”>
+<?php
 foreach(getFoto() as $foto){
   echo '<img src="data:image/png;base64,'.$foto. '" alt="imagen campaña marketing" height="300px"  width="400px" />';
   echo "<hr>";
 }
-
 ?>
+</div>
+
