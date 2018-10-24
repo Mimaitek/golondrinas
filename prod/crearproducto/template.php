@@ -39,7 +39,7 @@
                     <label for="producto_foto">Sube imágenes de tu producto</label>
                     <input type="hidden" name="MAX_FILE_SIZE" value="16777215" />
                     <input type="file" class="form-control-file" name="producto_foto" aria-describedby="fileHelp">
-                    <span id="formError"></span>
+
                 </div>
             
             

@@ -26,7 +26,7 @@
 
 
 
-<div style="padding: 10px; float: left; width: 45%; text-align: justify;">
+
 <?php
 
 foreach(getProductos() as $producto){
@@ -40,6 +40,12 @@ foreach(getProductos() as $producto){
 
         $producto['comentarios'] .
         '</div>
+        <div>
+          <img src="data:image/jpeg;base64,' . getImageReal($producto['id'], 'marketing') . '"/>
+        </div>
+        <div>
+          <img src="data:image/jpeg;base64,' . getImageMarke($producto['id'], 'marketing') . '"/>
+        </div>
     </div>
     </div>
     <div style="padding-bottom: 300px;"></div>';
@@ -47,12 +53,5 @@ foreach(getProductos() as $producto){
 ?>
 </div>
 
-<div style=”padding: 10px; float: right; width: 45%; text-align: justify;”>
-<?php
-foreach(getFoto() as $foto){
-  echo '<img src="data:image/png;base64,'.$foto. '" alt="imagen campaña marketing" height="300px"  width="400px" />';
-  echo "<hr>";
-}
-?>
-</div>
+
 
