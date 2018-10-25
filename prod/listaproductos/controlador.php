@@ -27,17 +27,14 @@ function getProductos(){
 }
     
 function enlaceImagen(){
-    $conexion = getConexion();
-    $consulta = "SELECT * FROM archivo_productos WHERE tipo='marketing'";
-    $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea");
-
-    $foto = array();
+     
+    $conexion = getCone
 }
 
-function getImageMarke(){
+function getImageMarke($producto_id){
 
     $conexion = getConexion();
-    $consulta = "SELECT * FROM archivo_productos WHERE tipo='marketing'";
+    $consulta = "SELECT * FROM archivo_productos WHERE WHERE tipo = 'marketing' AND producto_id = '$producto_id';";
     $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea");
 
     $foto = array();
@@ -54,8 +51,8 @@ function getImageMarke(){
 
 function getImageReal(){
 
-    $conexion = getConexion();
-    $consulta = "SELECT * FROM archivo_productos WHERE tipo='real'";
+    $conexion = getConexion($producto_id);
+    $consulta = "SELECT * FROM archivo_productos WHERE WHERE tipo = 'real' AND producto_id = '$producto_id';";
     $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea");
 
     $foto = array();

@@ -19,10 +19,11 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-<div style="padding-bottom: 40px;">
+
+<div style="padding-top: 40px;">
 <h2>Lista de productos</h2>
 
-</div>'
+</div>
 
 
 
