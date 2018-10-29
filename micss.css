@@ -9,7 +9,10 @@
 
 }
 
-
+#divproductos{
+    border: black double 2px;
+    padding: 20px;
+}
 
 
 *{
