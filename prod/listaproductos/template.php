@@ -31,7 +31,7 @@
 <?php
 
 foreach(getProductos() as $producto){
-    echo '<div class="container">
+    echo '<div id="divproductos" class="container">
     <div class="row justify-content-md-center">
         <div class="col"><h5>Tipo de producto:</h5>'.
         $producto['tipo_producto'] .
@@ -42,16 +42,17 @@ foreach(getProductos() as $producto){
         $producto['comentarios'] .
         '</div>
         <div>
-          <img src="data:image/jpeg;base64,' . getImageReal($producto['id'], 'marketing') . '"/>
+          <img src="data:image/jpeg;base64, ' . getImageReal($producto["id"]) .'"/>
         </div>
         <div>
-          <img src="data:image/jpeg;base64,' . getImageMarke($producto['id'], 'marketing') . '"/>
+        <img src="data:image/jpeg;base64, ' . getImageMarke($producto["id"]) . '"/>
         </div>
     </div>
     </div>
     <div style="padding-bottom: 300px;"></div>';
 }
 ?>
+
 </div>
 
 
