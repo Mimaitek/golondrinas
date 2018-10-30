@@ -24,12 +24,7 @@
 <h2>Lista de productos</h2>
 
 </div>
-
-
-
-
 <?php
-
 foreach(getProductos() as $producto){
     echo '<div id="divproductos" class="container">
     <div class="row justify-content-md-center">
@@ -47,11 +42,17 @@ foreach(getProductos() as $producto){
         <div>
         <img src="data:image/jpeg;base64, ' . getImageMarke($producto["id"]) . '"/>
         </div>
+        <div>
+        <a href="' .'/detalleproductos/' .$producto["id"]. '">Leer más</a>
+        </div>
     </div>
     </div>
     <div style="padding-bottom: 300px;"></div>';
 }
 ?>
+
+
+
 
 </div>
 

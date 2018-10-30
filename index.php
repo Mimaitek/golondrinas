@@ -55,7 +55,10 @@ define('RUTA_ACTUAL', $_SERVER['REQUEST_URI']);
       if(RUTA_ACTUAL == '/productos/'){
         require_once('prod/controlador.php');
       }
-      
+      $posicion = strrpos(RUTA_ACTUAL, '/detalleproductos/');
+      if(is_int($posicion) && $posicion == 0){
+        require('prod/controlador.php');
+      }
     ?>
     <?php include("utiles.php");?>
      <?php require('footer.php'); ?>

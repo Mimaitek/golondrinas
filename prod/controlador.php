@@ -5,7 +5,8 @@
       if(RUTA_ACTUAL == '/'){
         require('listaproductos/controlador.php');
       }
-      if(RUTA_ACTUAL == '/'){
+      $posicion = strrpos(RUTA_ACTUAL, '/detalleproductos/');
+      if(is_int($posicion) && $posicion == 0){
         require('detalleproductos/controlador.php');
       }
  

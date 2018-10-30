@@ -6,12 +6,10 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-      <li class="nav-item active">
+    <li class="nav-item active">
         <a class="nav-link" href="#">Genios Del Marketing <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active" >
-        <a class="nav-link" href="#">Portada</a>
-      </li>
+     </li>
+      
       
       
       
@@ -23,6 +21,9 @@
       </li>
       <li class='nav-item'>
         <a class='nav-link' href='/registro/'>Registro</a>
+      </li>
+      <li class='nav-item'>
+      <a class='nav-link' href='/login/'>Subir productos</a>
       </li>";
 
     } else {
