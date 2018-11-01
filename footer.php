@@ -1,4 +1,5 @@
-<!-- Footer -->
+<!-- Template para el footer donde incluyo una breve explicación de la web, además de los enlaces a las redes sociales. 
+Y el enlace directo a varias secciones de la web como "Sobre nosotros, Productos, Contacto y Ayuda" acecesibles a cualquier usuario. -->
 <div style="width:100%;height:100px;">
 <footer class="page-footer font-small indigo">
 
@@ -53,7 +54,7 @@
           <div class="mb-5 flex-center">
 
             <!-- Facebook -->
-            <a class="fb-ic">
+            <a class="fb-ic" href="https://faceebok.com">
               <i class="fab fa-facebook fa-lg white-text mr-4"> </i>
             </a>
             <!-- Twitter -->

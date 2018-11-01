@@ -1,5 +1,5 @@
 
-
+<!--Template para formalizar el registro en la web-->
 <div class="fondo-registro">
   <div class="container container-registro">
 

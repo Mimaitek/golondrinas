@@ -31,7 +31,6 @@ function validarProducto(){
     if($producto!=""){
         return true;
     }else{
-        echo  '<span id="formError">Asigne un nombre al producto</span>';
         return false;
     }
 
@@ -42,7 +41,6 @@ function validarClasificacion(){
     if($clasificacion){
         return true;
     }else{
-        echo '<span id="formError">Seleccione una categoria</span>';
         return false;
         
     }
@@ -52,7 +50,6 @@ function validarClasificacion(){
 function validarComentarios(){
     $comentarios = ($_POST["comentarios"]);
     if($comentarios == ""){
-        echo '<span id="formError">Es necesario una pequeña reseña del producto</span>';
         return false;
     }else{
         return true;
@@ -60,34 +57,21 @@ function validarComentarios(){
 
 }
 
-function validarMarketingFoto(){
 
-    return isset($_FILES["marketing_foto"]) && isset($_FILES["marketing_foto"]["name"]);
-
-    /*
-    array(5) { ["name"]=> string(28) "1680x1050-1268822-nebula.jpg" 
-        ["type"]=> string(10) "image/jpeg" 
-        ["tmp_name"]=> string(25) "/opt/lampp/temp/phpFr3j50" 
-        ["error"]=> int(0) 
-        ["size"]=> int(373368) }
-
-    function recogerValoresMarketingFoto(){
-
-        if(validarMarketingFoto()){
-            foreach($marketing_foto as $valor => $clave){
-
-            }
-        }
-
-    }
-*/
-}
+//Comprobar que existe la foto de marketing y la real
 function validarProductoFoto(){
     $producto_foto = $_FILES["producto_foto"];
     if($producto_foto){
         return true;
     }else{
-        echo '<span id="formError"> Es necesario subir una fotografía</span>';
+        return false;
+    }
+}
+function validarMarkeFoto(){
+    $marketing_foto = $_FILES["marketing_foto"];
+    if($marketing_foto){
+        return true;
+    }else{
         return false;
     }
 }
@@ -102,10 +86,9 @@ function fechaHoy(){
 
 
 function validaDatos(){
-    if(validarProducto() && validarClasificacion() && validarComentarios()){
+    if(validarProducto() && validarClasificacion() && validarComentarios() && validarProductoFoto() && validarMarkeFoto()){
         return true;
     }else{
-        echo '<span id="formError">Existen problemas con su formulario</span>';
         return false;
         
     }
@@ -150,9 +133,8 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
           if ($resultado){
               return true;
           }else{
-              addError("No inserción de datos");
+              return false;
           }
-        mysqli_close($conexion);
     }
 }
 
@@ -190,6 +172,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
             // guardar, las imagenes, usando la funcion aniadeFotoProducto (hay que completarla!!!!)
                 aniadeFotoProducto($last_id, $_FILES["marketing_foto"], 'marketing');
                 aniadeFotoProducto($last_id, $_FILES["producto_foto"], 'real');
+                addMensaje("Producto enviado");
 
             }else{
                 addError("Error en la inserción de datos");

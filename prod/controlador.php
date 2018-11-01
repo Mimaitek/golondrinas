@@ -1,4 +1,5 @@
 <?php
+/*Si estás logado accedes directamente a subir productos sino te deriva a una web para realizar el login o el registro*/
       if(RUTA_ACTUAL == '/productos/'){
         require('crearproducto/controlador.php');
       }

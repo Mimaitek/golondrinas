@@ -1,7 +1,7 @@
 <?php require_once(dirname(__FILE__)."/../../conexion.php"); ?>
 
 <?php
-
+//Función para verificar el email
 function cambiaEmail($email){
     $conexion = getConexion();
     $usuarioSesion = $_SESSION["usuario"];
@@ -16,7 +16,7 @@ function cambiaEmail($email){
     
 }
 
-
+//Función para verificar la contraseña 
 function cambiaContrasena($contrasena){
     $conexion = getConexion();
     $usuarioSesion = $_SESSION["usuario"];
@@ -32,7 +32,7 @@ function cambiaContrasena($contrasena){
 }
 
 $usuarioSesion = $_SESSION["usuario"];
-
+//si cumple las condiciones podrá cambiar la contraseña antigua por la nueva.
 if (isset($usuarioSesion)) {
    include("template.php");
    if(isset($_POST["enviar"])){

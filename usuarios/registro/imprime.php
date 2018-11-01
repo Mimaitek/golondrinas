@@ -1,6 +1,4 @@
 
-LALALALALLA
-
 <?php
 
 $usuario = htmlspecialchars($_POST["usuario"]);
