@@ -20,27 +20,32 @@
   </a>
 </div>
 
-<div style="padding-top: 40px;">
+<div class="head_css">
 <h2>Lista de productos</h2>
 
 </div>
+
+<div class="back_css">
 <?php
+ //get_mime_type("mifoto.jPG");
+
+
 foreach(getProductos() as $producto){
-    echo '<div id="divproductos" class="container">
+    echo '<div class="divproductos" class="container">
     <div class="row justify-content-md-center">
-        <div class="col"><h5>Tipo de producto:</h5>'.
+        <div class="col" class="col_bg"><h5>Tipo de producto:</h5>'.
         $producto['tipo_producto'] .
-       '<h5>Nombre:</h5>'. 
+       '<h4>Nombre:</h4>'. 
         $producto['nombre'] .
         '<h5>Descripción:</h5>'.
 
         $producto['comentarios'] .
         '</div>
         <div>
-          <img src="data:image/jpeg;base64, ' . getImageReal($producto["id"]) .'"/>
+          <img width="300" height="300" src="data:'. get_mime_type($producto['foto_marketing']['nombre_archivo']).';base64, ' . $producto['foto_marketing']['contenido_archivo'] .'"/>
         </div>
         <div>
-        <img src="data:image/jpeg;base64, ' . getImageMarke($producto["id"]) . '"/>
+        <img width="300" height="300" src="data:'. get_mime_type($producto['foto_real']['nombre_archivo']) .';base64, ' . $producto['foto_real']['contenido_archivo'] . '"/>
         </div>
         <div>
         <a href="' .'/detalleproductos/' .$producto["id"]. '">Leer más</a>
@@ -49,8 +54,9 @@ foreach(getProductos() as $producto){
     </div>
     <div style="padding-bottom: 300px;"></div>';
 }
-?>
 
+?>
+</div>
 
 
 

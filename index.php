@@ -2,6 +2,7 @@
 session_start(); //Iniciamos la sesion
 define('RUTA_ACTUAL', $_SERVER['REQUEST_URI']);
 
+include("utiles.php");
 
 ?>
 <!--Con este archivo creamos las cabeceras de las páginas además de enrutar hacia las diferentes secciones a través del controlador, cargando los controladores 
@@ -64,7 +65,7 @@ de las diferentes secciones de la web-->
       }
     ?>
     <!--Aqui añado el footer para completar la web, y añado utiles donde estan alojados los mensajes de error-->
-    <?php include("utiles.php");?>
+
      <?php require('footer.php'); ?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

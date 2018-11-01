@@ -15,12 +15,31 @@
     border: green double;
 
 }
+.head_css{
+    background: #C7C7C7;
+    padding: 40px;
+    text-align: center;
+    text-decoration: black underline overline;
 
-#divproductos{
-    border: black double 2px;
-    padding: 20px;
+}
+.back_css{
+    background-repeat: no-repeat;
+    background-image: url('/prod/listaproductos/coins-912717_1920.jpg');
+    background-attachment: fixed;
 }
 
+.divproductos{
+    border-style: double;
+    border: #030303 2px;
+    background: #C7C7C7;
+    padding: 40px;
+}
+
+
+.col_bg{
+    background: #D5D8DC;
+    color:#030303;
+}
 
 *{
         font-family: 'Merienda', cursive;

@@ -1,13 +1,3 @@
- var producto = document.getElementById("producto");
- var select = document.getElementById('clasificacion');
- select.addEventListener('change',
-  function(){
-    var selectedOption = this.options[select.selectedIndex];
-    console.log(selectedOption.value + ': ' + selectedOption.text);
-  });
-  var comentarios = document.getElementById("comentarios");
-  var marketing_foto = document.getElementById("marketing_foto");
-  var producto_foto = document.getElementById("producto_foto");
 
 
  
@@ -15,13 +5,13 @@
     var inputElement = document.getElementById(inputID);
    if(inputElement.value == ""){
     document.getElementById(mensajeID).innerHTML = mensajeTexto;
+    return false;
    }else{
     document.getElementById(mensajeID).innerHTML = "";
+    return true;
    }
-
+  
   }
-
-
 
 /*
   function validacion(){
