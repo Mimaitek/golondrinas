@@ -41,26 +41,26 @@ de las diferentes secciones de la web-->
 
     <?php
     //Dependiendo de la ruta cargaremos un controlador u otro, lo que nos permitirá ejecutar el diferente codigo, administrado por otro controlador propio de la sección.
-     if(RUTA_ACTUAL == '/'){
+     if(RUTA_ACTUAL == '/'  ||  (strrpos(RUTA_ACTUAL, '/?') == 0) && is_int(strrpos(RUTA_ACTUAL, '/?'))){
       require_once('prod/controlador.php');
     }
-      if(RUTA_ACTUAL == '/login/'){
+      elseif(RUTA_ACTUAL == '/login/'){
         require_once('usuarios/controlador.php');
       }
-      if(RUTA_ACTUAL == '/registro/'){
+      elseif(RUTA_ACTUAL == '/registro/'){
         require_once('usuarios/controlador.php');
       }
-      if(RUTA_ACTUAL == '/perfil/'){
+      elseif(RUTA_ACTUAL == '/perfil/'){
         require_once('usuarios/controlador.php');
       }
-      if(RUTA_ACTUAL == '/logout/'){
+      elseif(RUTA_ACTUAL == '/logout/'){
         require_once('usuarios/controlador.php');
       }
-      if(RUTA_ACTUAL == '/productos/'){
+      elseif(RUTA_ACTUAL == '/productos/'){
         require_once('prod/controlador.php');
       }
-      $posicion = strrpos(RUTA_ACTUAL, '/detalleproductos/');
-      if(is_int($posicion) && $posicion == 0){
+      
+      elseif(strrpos(RUTA_ACTUAL, '/detalleproductos/') == 0){
         require('prod/controlador.php');
       }
     ?>

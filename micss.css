@@ -35,7 +35,18 @@
     padding: 40px;
 }
 
+.detalleproducto{
+    padding: 30px;
+    border: #1b9dda double 2px;
+    background-color: #C7C7C7;
+    text-align: center;
+    border-style: outset;
+}
+.estiloletra{
+    font-weight: bolder;
+    color: red;
 
+}
 .col_bg{
     background: #D5D8DC;
     color:#030303;

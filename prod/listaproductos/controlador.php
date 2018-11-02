@@ -4,35 +4,39 @@
  
 //Comprobar si el usuario está registrado y si tiene permiso para subir productos.
 
+$pagina_siguiente = true;
+$pagina_actual = 1;
+$pagina_anterior = true;
 
+$parts = parse_url(RUTA_ACTUAL);
+if(isset($parts['query'])) {
+    parse_str($parts['query'], $parametros_url);
+    if(isset($parametros_url["page"])){
+        $pagina_actual = $parametros_url['page'];
+    }
+
+
+}
+$pagina_anterior = $pagina_actual > 1;
+
+$productos = getProductos();
 require("template.php");
 
 
+
 function getProductos(){
-/**
- >>> def dame_limit_y_offset(page=1):
-...   page = page - 1
-...   return limit, limit*page
 
-
-limit=20
-
->>> dame_limit_y_offset(1)
-(20, 0)
->>> dame_limit_y_offset(2)
-(20, 20)
->>> dame_limit_y_offset(3)
-(20, 40)
-
- */
+    global $pagina_actual, $pagina_siguiente;
     $limit = 2;
-    $offset = 0;
+    $offset = $limit*($pagina_actual -1);
 
     $conexion = getConexion();
     $consulta = "SELECT * FROM productos ORDER BY id DESC LIMIT $offset, $limit";
-    $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea linea15");
+    $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea ");
 
     $productos = array();
+
+    $contar = 0;
 
     if ($resultado){
         while ($producto = mysqli_fetch_assoc($resultado)) {
@@ -41,10 +45,18 @@ limit=20
             $producto['foto_real'] = getImageReal($producto['id']);
             $producto['foto_real']['contenido_archivo'] = base64_encode($producto['foto_real']['contenido_archivo']);
             array_push($productos, $producto);
+            $contar++;
             
+    }
+
+
+    if($contar <$limit){
+        $pagina_siguiente = false;
     }
     return $productos;
  }
+
+
 }    
 
 

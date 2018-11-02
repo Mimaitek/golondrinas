@@ -30,7 +30,7 @@
  //get_mime_type("mifoto.jPG");
 
 
-foreach(getProductos() as $producto){
+foreach($productos as $producto){
     echo '<div class="divproductos" class="container">
     <div class="row justify-content-md-center">
         <div class="col" class="col_bg"><h5>Tipo de producto:</h5>'.
@@ -57,11 +57,19 @@ foreach(getProductos() as $producto){
 
 ?>
 </div>
+<div class="btn-group" role="group" aria-label="Basic example">
+<?php if($pagina_anterior){ 
+  echo '<a class="btn btn-secondary" href="/?page='
+  . ($pagina_actual-1)
+  . '">Anterior</a>';
+} 
 
+if($pagina_siguiente){ 
+  echo '<a class="btn btn-secondary" href="/?page='
+  . ($pagina_actual+1)
+  . '">Siguiente</a>';
 
-
+}
+  ?>
 
 </div>
-
-
-
