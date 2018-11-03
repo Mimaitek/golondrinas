@@ -21,7 +21,7 @@
 </div>
 
 <div class="head_css">
-<h2>Lista de productos</h2>
+<h2>Lista de productos lo</h2>
 
 </div>
 
