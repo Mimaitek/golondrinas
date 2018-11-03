@@ -3,7 +3,7 @@ if (!isset($_SESSION)) {
   session_start();
 }
 ?>
- 
+ <!--Template para modificar los datos del usuario-->
  <div class="fondo-perfil">
  
 

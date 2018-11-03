@@ -2,11 +2,14 @@
 session_start(); //Iniciamos la sesion
 define('RUTA_ACTUAL', $_SERVER['REQUEST_URI']);
 
+include("utiles.php");
 
 ?>
+<!--Con este archivo creamos las cabeceras de las páginas además de enrutar hacia las diferentes secciones a través del controlador, cargando los controladores 
+de las diferentes secciones de la web-->
 <html>
   <head>
-    <title></title>
+    <title>Genios del Marketing</title>
     <meta content="UTF-8">
     
     <link href="https://fonts.googleapis.com/css?family=Modern+Antiqua" rel="stylesheet">
@@ -37,28 +40,40 @@ define('RUTA_ACTUAL', $_SERVER['REQUEST_URI']);
 
 
     <?php
-      if(RUTA_ACTUAL == '/login/'){
+    //Dependiendo de la ruta cargaremos un controlador u otro, lo que nos permitirá ejecutar el diferente codigo, administrado por otro controlador propio de la sección.
+     if(RUTA_ACTUAL == '/'  ||  (strrpos(RUTA_ACTUAL, '/?') == 0) && is_int(strrpos(RUTA_ACTUAL, '/?'))){
+      require_once('prod/controlador.php');
+    }
+      elseif(RUTA_ACTUAL == '/login/'){
         require_once('usuarios/controlador.php');
       }
-      if(RUTA_ACTUAL == '/registro/'){
+      elseif(RUTA_ACTUAL == '/registro/'){
         require_once('usuarios/controlador.php');
       }
-      if(RUTA_ACTUAL == '/perfil/'){
+      elseif(RUTA_ACTUAL == '/perfil/'){
         require_once('usuarios/controlador.php');
       }
-      if(RUTA_ACTUAL == '/logout/'){
+      elseif(RUTA_ACTUAL == '/logout/'){
         require_once('usuarios/controlador.php');
       }
-      if(RUTA_ACTUAL == '/productos/'){
-        require_once('usuarios/controlador.php');
+      elseif(RUTA_ACTUAL == '/productos/'){
+        require_once('prod/controlador.php');
       }
       
+      elseif(strrpos(RUTA_ACTUAL, '/detalleproductos/') == 0){
+        require('prod/controlador.php');
+      }
     ?>
-    <?php include("utiles.php");?>
+    <!--Aqui añado el footer para completar la web, y añado utiles donde estan alojados los mensajes de error-->
+
      <?php require('footer.php'); ?>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    
+  
+    <script src="/javascript.js"></script>
   </body>
   
 </html>

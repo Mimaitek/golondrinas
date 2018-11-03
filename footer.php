@@ -1,4 +1,5 @@
-<!-- Footer -->
+<!-- Template para el footer donde incluyo una breve explicación de la web, además de los enlaces a las redes sociales. 
+Y el enlace directo a varias secciones de la web como "Sobre nosotros, Productos, Contacto y Ayuda" acecesibles a cualquier usuario. -->
 <div style="width:100%;height:100px;">
 <footer class="page-footer font-small indigo">
 
@@ -37,9 +38,8 @@
   
       <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
         <div class="col-md-8 col-12 mt-5">
-          <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+          <p style="line-height: 1.7rem">Somos una web que queremos dar voz y voto a todos aquellos descontentos con los Productos
+          adquiridos, ya sean produtos tecnológicos, de alimentación, de servicios...etc.</p>
         </div>
       </div>
       <!-- Grid row-->
@@ -54,7 +54,7 @@
           <div class="mb-5 flex-center">
 
             <!-- Facebook -->
-            <a class="fb-ic">
+            <a class="fb-ic" href="https://faceebok.com">
               <i class="fab fa-facebook fa-lg white-text mr-4"> </i>
             </a>
             <!-- Twitter -->

@@ -1,3 +1,64 @@
+.errorproductos{
+    font-size: 20px;
+    color:red;
+}
+
+
+
+#formError{
+    color:red;
+    border: red double;
+   
+}
+#formValidado{
+    color: green;
+    border: green double;
+
+}
+.head_css{
+    background: #C7C7C7;
+    padding: 40px;
+    text-align: center;
+    text-decoration: black underline overline;
+
+}
+.back_css{
+    background-repeat: no-repeat;
+    background-image: url('/prod/listaproductos/coins-912717_1920.jpg');
+    background-attachment: fixed;
+}
+
+.divproductos{
+    border-style: double;
+    border: #030303 2px;
+    background: #C7C7C7;
+    padding: 40px;
+}
+
+.divcomentarios{
+    border-style: double;
+    border: #030303 2px;
+    background: #C7C7C7;
+    padding: 40px;
+
+}
+.detalleproducto{
+    padding: 30px;
+    border: #1b9dda double 2px;
+    background-color: #C7C7C7;
+    text-align: center;
+    border-style: outset;
+}
+.estiloletra{
+    font-weight: bolder;
+    color: red;
+
+}
+.col_bg{
+    background: #D5D8DC;
+    color:#030303;
+}
+
 *{
         font-family: 'Merienda', cursive;
         font-size: 18px;
@@ -18,6 +79,9 @@ h1{
 .fondo-perfil label, .fondo-perfil h1{
     color:white;
 }
+.fondo-productos{
+    background-image: url('/prod/crearproducto/compras1.jpg');
+}
 
 .container-registro {
     padding:40px;
@@ -28,6 +92,12 @@ h1{
 .container-registro label, .container-registro h1{
     color: white;
 }
+.container-productos{
+    padding: 70px;
+
+}
+
+
 
 #menu{
     background-color: #D5D8DC  ;

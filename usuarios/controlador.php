@@ -12,14 +12,12 @@
           require_once('perfil/controlador.php');
         }
       }
+      //Para eliminar la sesión del usuario actual y se produzca un logout 
       if(RUTA_ACTUAL == '/logout/'){
         $_SESSION["usuario"]="";
-        Header('Location: '.$_SERVER['PHP_SELF']);
+        Header('Location: /');
       }
-      if(RUTA_ACTUAL == '/productos/'){
-        require('productos/controlador.php');
-      }
-
+  
 
 
  

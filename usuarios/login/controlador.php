@@ -1,4 +1,4 @@
-<?php require_once(dirname(__FILE__)."/../conexion.php"); ?>
+<?php require_once(dirname(__FILE__)."/../../conexion.php"); ?>
 
 
 <?php
@@ -26,19 +26,17 @@ function compruebaUsuario($usuario){
 
     if ($resultado){
         while ($row = mysqli_fetch_assoc($resultado)) {
-             $row["usuario"];
-             $row["contrasena"];
              $usuario = $row["usuario"];
              $pass = $row["contrasena"];
+             $id_usuario = $row["id"];
 
         $contrasena = $_POST["contrasena"];
 
         if(password_verify($contrasena, $pass)){
             echo "Password correcto";
-            return true;
+            return $id_usuario;
         }else{
-            return false;
-            echo "Contraseña inválida";
+            return 0;
         }
 
     }
@@ -55,12 +53,13 @@ if(($_SERVER['REQUEST_METHOD'])== "POST"){
      $contrasena = $_POST["contrasena"];
      
     
-
+    $id_usuario = compruebaUsuario($usuario);
     
-       if(compruebaUsuario($usuario)){
+       if($id_usuario){
         addMensaje("Login completado");
         $_SESSION["usuario"] = $usuario;
-        Header('Location: '.$_SERVER['PHP_SELF']);
+        $_SESSION["id_usuario"] = $id_usuario;
+        Header('Location: /');
         }else{
             addError("Error de login");
         }
