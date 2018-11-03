@@ -18,10 +18,16 @@
         var boton = document.getElementById('botonenvio');
         if(valido) {
             boton.disabled = false;
+            
         } else {
             boton.disabled = true;
         }
         console.log( window.__campos);
+    }
+
+
+    function mensajeAlerta(){
+        confirm("Producto enviado correctamente");
     }
 
 </script>
@@ -81,7 +87,7 @@
                 </div>
             
             
-                <button type="submit" class="btn btn-primary" name="enviar" id="botonenvio" disabled>Submit</button>
+                <button type="submit" class="btn btn-primary" name="enviar" id="botonenvio" onclick="setTimeout(mensajeAlerta(), 3000);" disabled>Submit</button>
                 <div id="contenedor_errores"></div>
                 </form>
              </div>

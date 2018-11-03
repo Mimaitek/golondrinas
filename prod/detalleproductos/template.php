@@ -7,7 +7,7 @@ $producto = getProductoDetalle($ID_PRODUCTO);
 <div class="container">
 <div class="row" >
   <div class="col-12">Nombre del Producto: <span class="estiloletra"><?php echo $producto["nombre"]; ?></span></div>
-  <div class="col-12">Enviado por:<span class="estiloletra"><?php echo $producto["id_usuario"];?> </span></div>
+  <div class="col-12">Enviado por: <span class="estiloletra"><?php echo ucfirst($producto["usuario"]); ?> </span></div>
   <div class="col-12">Descripción del Producto: <?php echo $producto["comentarios"]; ?></div>
 </div>
 
@@ -39,10 +39,10 @@ foreach($comentarios as $comentario){
         <div class="col-12"><br>Fecha publicación '.
         $comentario['fecha'] .
        '</div><div class="col-8">'. 
-        $comentario['contenido'] .
+       str_replace("\n", "<br/>", $comentario['contenido'])    .
         '</div><div class="col-4"> Usuario: '.
 
-        $comentario['usuario_id'] .
+        ucfirst($comentario['usuario'])  .
         '</div>
        
     </div>
