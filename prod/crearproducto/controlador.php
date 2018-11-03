@@ -133,7 +133,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
 
     if($fichero) {
         $conexion = getConexion();
-        $consulta = "INSERT INTO archivo_productos (productos_id, tipo, fecha,  nombre_archivo, contenido_archivo) VALUES ('$id_producto', '$tipo', STR_TO_DATE('$fecha', '%d/%m/%Y'), '$nombre_fichero', LOAD_FILE('$nueva_ruta'));";
+        $consulta = "INSERT INTO archivo_productos (productos_id, tipo, fecha,  nombre_archivo, contenido_archivo) VALUES ('$id_producto', '$tipo', STR_TO_DATE('$fecha', '%d/%m/%Y'), '$nombre_fichero', LOAD_FILE('$ruta'));";
         $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
         
           if ($resultado){
