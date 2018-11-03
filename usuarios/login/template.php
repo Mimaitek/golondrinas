@@ -24,9 +24,9 @@ if (!isset($_SESSION)) {
           <input type="password" class="form-control" id="contrasena" placeholder="Contraseña" name="contrasena">
         </div>
         <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="recuerdame">
-          <label class="form-check-label" for="recuerdame">
-            Recordar Contraseña
+          <!--<input type="checkbox" class="form-check-input" id="recuerdame">-->
+          <!--<label class="form-check-label" for="recuerdame">-->
+            <!--Recordar Contraseña-->
           </label>
         </div>
         <button type="submit" class="btn btn-primary" name="enviar">Entrar</button>

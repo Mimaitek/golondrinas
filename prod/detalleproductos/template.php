@@ -1,6 +1,8 @@
 <div class="detalleproducto">
 <?php
 $producto = getProductoDetalle($ID_PRODUCTO);
+
+
 ?>
 <div class="container">
 <div class="row" >
@@ -21,11 +23,43 @@ $producto = getProductoDetalle($ID_PRODUCTO);
 </div>
 
 </div>
+
+
+
+
+
 <?php
+
+
+$comentarios = recuperarComentarios($ID_PRODUCTO);
+
+foreach($comentarios as $comentario){
+    echo '<div style="text-align:left; margin-top:20px; padding: 10px;"><div class="container">
+    <div class="row">
+        <div class="col-12"><br>Fecha publicación '.
+        $comentario['fecha'] .
+       '</div><div class="col-8">'. 
+        $comentario['contenido'] .
+        '</div><div class="col-4"> Usuario: '.
+
+        $comentario['usuario_id'] .
+        '</div>
+       
+    </div>
+    </div></div><hr>';
+}
+
+
+?>
+
+
+
+<?php
+
 if($usuarioSesion = $_SESSION["usuario"]){
     echo "<form method='POST'><div class='detallecomentario'><fieldset>
     <legend>Envía un comentario</legend>
-    <textarea rows='4' cols='110' autofocus placeholder='Escribe tu comentario...' style='overflow:auto;resize:none' name='comentariosProducto'></textarea><br>
+    <textarea rows='4' cols='110' autofocus placeholder='Escribe tu comentario...' style='overflow:auto;resize:none' name='comentariosProducto'></textarea><hr>
     <input class='btn btn-primary' type='submit' value='enviar' name='enviar'></fieldset></div></form>";
 }else{
     echo "<div class='detallecomentario'><fieldset>
@@ -35,6 +69,7 @@ if($usuarioSesion = $_SESSION["usuario"]){
     <a href='/registro/'><button>Registrate</button></a>";
 
 }
+
 
 ?>
 </div>

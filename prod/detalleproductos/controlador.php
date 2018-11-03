@@ -8,6 +8,14 @@ $ID_PRODUCTO = str_replace('/detalleproductos/', '', RUTA_ACTUAL);
 $usuarioSesion = $_SESSION["usuario"];
 
 
+if (isset($_POST["enviar"])){
+
+    $contenido = $_POST["comentariosProducto"];
+    $fecha = fechaHoy();
+   
+    insertarComentarios($ID_PRODUCTO, $contenido,$fecha); 
+
+}
 
 require("template.php");
 
@@ -80,7 +88,6 @@ function insertarComentarios($producto_id, $contenido,$fecha){
     $conexion = getConexion();
     $usuarioSesion = $_SESSION["id_usuario"];
     $consulta = "INSERT INTO comentarios (usuario_id, producto_id, contenido , fecha) VALUES ('$usuarioSesion', '$producto_id', '$contenido', STR_TO_DATE('$fecha', '%d/%m/%Y'));";
-                    var_dump($consulta);
     $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
     if ($resultado){
         return true;
@@ -88,15 +95,28 @@ function insertarComentarios($producto_id, $contenido,$fecha){
         echo "<h1>Error en la inserción del comentario</h1>";
     }
 }
+//Para recuperar todos los comentarios del producto
 
+function recuperarComentarios($producto_id){
+    $conexion = getConexion();
+    $consulta = "SELECT * FROM comentarios WHERE producto_id = '$producto_id'  ORDER BY fecha ;";
+    $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
+    
+    $comentarios = array();
+    if ($resultado){
+        while ($comentario = mysqli_fetch_assoc($resultado)) {
+            array_push($comentarios, $comentario);
 
+        }
 
-if (isset($_POST["enviar"])){
+        return $comentarios;
 
-    $contenido = $_POST["comentariosProducto"];
-    $fecha = fechaHoy();
+}
+}
 
-    insertarComentarios($ID_PRODUCTO, $contenido,$fecha); 
+function recuperarUsuario(){
+    $conexion = getConexion();
+    $consulta = "SELECT * FROM comentarios WHERE producto_id = '$producto_id'  ORDER BY fecha ;";
 }
 
 ?>
