@@ -184,6 +184,6 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
     } 
     
 }else {
-    require("template2.php");
+    require("template_no_login.php");
 }
 ?>
