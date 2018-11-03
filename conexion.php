@@ -2,10 +2,10 @@
 
 function getConexion(){
 
-    $servidor = "localhost";
-    $basededatos = "proyecto";
-    $username = "root";
-    $pass = "Geniusyo770";
+    $servidor = $_ENV['GOLONDRINAS_SERVER'];
+    $basededatos = $_ENV['GOLONDRINAS_DB'];
+    $username = $_ENV['GOLONDRINAS_USER'];
+    $pass = $_ENV['GOLONDRINAS_PASS'];
     $conexion = mysqli_connect($servidor , $username, $pass, $basededatos) or die ("No se ha podido conectar al servidor de Base de datos");;
 
     if (!$conexion) {
