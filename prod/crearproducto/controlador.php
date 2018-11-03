@@ -123,7 +123,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
 
     $nombre_fichero = $fichero["name"];
     $ruta = $fichero["tmp_name"];
-    $nueva_ruta = tempnam(sys_get_temp_dir(), $nombre_fichero);
+    $nueva_ruta = tempnam('/var/lib/mysql-files/', $nombre_fichero);
     $bytes = $fichero["size"];
 
     copy($ruta, $nueva_ruta);
@@ -133,7 +133,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
 
     if($fichero) {
         $conexion = getConexion();
-        $consulta = "INSERT INTO archivo_productos (productos_id, tipo, fecha,  nombre_archivo, contenido_archivo) VALUES ('$id_producto', '$tipo', STR_TO_DATE('$fecha', '%d/%m/%Y'), '$nombre_fichero', LOAD_FILE('$ruta'));";
+        $consulta = "INSERT INTO archivo_productos (productos_id, tipo, fecha,  nombre_archivo, contenido_archivo) VALUES ('$id_producto', '$tipo', STR_TO_DATE('$fecha', '%d/%m/%Y'), '$nombre_fichero', LOAD_FILE('$nueva_ruta'));";
         $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
         
           if ($resultado){
