@@ -23,8 +23,8 @@ require("template.php");
 function getProductoDetalle($id){
 
     $conexion = getConexion();
-    $consulta = "SELECT * FROM productos WHERE id = '$id';";
-    $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea linea");
+    $consulta = "SELECT productos.*, usuarios.usuario FROM productos INNER JOIN usuarios ON productos.id_usuario = usuarios.id WHERE productos.id = '$id';";
+    $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
 
     $producto = null;
     if ($resultado){
@@ -83,7 +83,7 @@ function fechaHoy(){
 
 
 //Función para la inserción de comentarios en la pagina web.
-function insertarComentarios($producto_id, $contenido,$fecha){
+function insertarComentarios($producto_id, $contenido, $fecha){
   
     $conexion = getConexion();
     $usuarioSesion = $_SESSION["id_usuario"];
@@ -92,21 +92,20 @@ function insertarComentarios($producto_id, $contenido,$fecha){
     if ($resultado){
         return true;
     }else{
-        echo "<h1>Error en la inserción del comentario</h1>";
+        aler("Error en la inserción del comentario");
     }
 }
 //Para recuperar todos los comentarios del producto
 
 function recuperarComentarios($producto_id){
     $conexion = getConexion();
-    $consulta = "SELECT * FROM comentarios WHERE producto_id = '$producto_id'  ORDER BY fecha ;";
+    $consulta = "SELECT comentarios.*, usuarios.usuario FROM comentarios INNER JOIN usuarios ON comentarios.usuario_id = usuarios.id WHERE producto_id = '$producto_id' ORDER BY fecha ;";
     $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
     
     $comentarios = array();
     if ($resultado){
         while ($comentario = mysqli_fetch_assoc($resultado)) {
             array_push($comentarios, $comentario);
-
         }
 
         return $comentarios;
@@ -116,7 +115,7 @@ function recuperarComentarios($producto_id){
 
 function recuperarUsuario(){
     $conexion = getConexion();
-    $consulta = "SELECT * FROM comentarios WHERE producto_id = '$producto_id'  ORDER BY fecha ;";
+    $consulta = "SELECT * FROM usuarios";
 }
 
 ?>
