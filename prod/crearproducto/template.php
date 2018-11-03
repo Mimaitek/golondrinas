@@ -26,9 +26,6 @@
     }
 
 
-    function mensajeAlerta(){
-        confirm("Producto enviado correctamente");
-    }
 
 </script>
 <div class="fondo-productos">
@@ -87,7 +84,7 @@
                 </div>
             
             
-                <button type="submit" class="btn btn-primary" name="enviar" id="botonenvio" onclick="setTimeout(mensajeAlerta(), 3000);" disabled>Submit</button>
+                <button type="submit" class="btn btn-primary" name="enviar" id="botonenvio" disabled>Submit</button>
                 <div id="contenedor_errores"></div>
                 </form>
              </div>
