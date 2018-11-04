@@ -7,29 +7,29 @@ Y el enlace directo a varias secciones de la web como "Sobre nosotros, Productos
     <div class="container">
 
       <div class="row text-center d-flex justify-content-center pt-5 mb-3 ">
-        <div class="col-md-2 mb-3">
+       <!-- <div class="col-md-2 mb-3">
           <h6 class="text-uppercase font-weight-bold">
             <a href="#!">Sobre Nosotros</a>
           </h6>
-        </div>
+        </div>-->
         
         <div class="col-md-2 mb-3">
           <h6 class="text-uppercase font-weight-bold">
-            <a href="#!">Productos</a>
+            <a href="http://genios-del-marketing.diamobile.com:81/">Productos</a>
           </h6>
         </div>
     
         <div class="col-md-2 mb-3">
           <h6 class="text-uppercase font-weight-bold">
-            <a href="#!">Contacto</a>
+            <a href="mailto:kiradillei@hotmail.com">Contacto</a>
           </h6>
         </div>
 
-        <div class="col-md-2 mb-3">
+        <!--<div class="col-md-2 mb-3">
           <h6 class="text-uppercase font-weight-bold">
             <a href="#!">Ayuda</a>
           </h6>
-        </div>
+        </div>-->
    
 
       </div>
@@ -54,7 +54,7 @@ Y el enlace directo a varias secciones de la web como "Sobre nosotros, Productos
           <div class="mb-5 flex-center">
 
             <!-- Facebook -->
-            <a class="fb-ic" href="https://faceebok.com">
+            <a class="fb-ic">
               <i class="fab fa-facebook fa-lg white-text mr-4"> </i>
             </a>
             <!-- Twitter -->
