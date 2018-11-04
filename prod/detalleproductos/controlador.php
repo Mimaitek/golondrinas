@@ -92,7 +92,7 @@ function insertarComentarios($producto_id, $contenido, $fecha){
     if ($resultado){
         return true;
     }else{
-        aler("Error en la inserción del comentario");
+        addError("Error en la inserción del comentario");
     }
 }
 //Para recuperar todos los comentarios del producto

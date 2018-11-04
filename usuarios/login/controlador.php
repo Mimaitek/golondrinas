@@ -56,12 +56,12 @@ if(($_SERVER['REQUEST_METHOD'])== "POST"){
     $id_usuario = compruebaUsuario($usuario);
     
        if($id_usuario){
-        addMensaje("Login completado");
+        echo "Login completado";
         $_SESSION["usuario"] = $usuario;
         $_SESSION["id_usuario"] = $id_usuario;
         Header('Location: /');
         }else{
-            addError("Error de login");
+            echo "Error de login";
         }
     }
 

@@ -174,7 +174,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
                 var_dump($last_id);
 
         
-            // addMensaje("Enhorabuena". ucfirst($_SESSION["usuario"])  . "Pronto subiremos tu publicación");
+            addMensaje("Enhorabuena". ucfirst($_SESSION["usuario"])  . "Pronto subiremos tu publicación");
 
             // primero, guardar en la tabla producto el producto
            

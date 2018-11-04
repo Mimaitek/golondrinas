@@ -20,7 +20,7 @@
                       
                       <div class="form-group">
                           <label for="contrasena">Contraseña</label>
-                          <input type="password" class="form-control" id="contrasena" placeholder="Cree una contraseña" name="contrasena">
+                          <input type="password" class="form-control" id="contrasena" placeholder="Cree una contraseña más de 5 caracteres" name="contrasena">
                      </div>
                       
                       
