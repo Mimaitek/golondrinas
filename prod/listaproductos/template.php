@@ -1,13 +1,13 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner" style="height: 500px;">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://www.esan.edu.pe/apuntes-empresariales/2017/03/21/principal-funciones-de-la-gestion-de-compras.jpg" alt="First slide">
+      <img class="d-block w-100" src="https://www.diligent.es/wp-content/uploads/2017/04/aumentar-frecuencia-de-compras-de-tu-tienda-online.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://impresa.prensa.com/vivir/Compras-seguras_LPRIMA20171123_0106_27.jpg" alt="Second slide">
+      <img class="d-block w-100" src="https://d500.epimg.net/cincodias/imagenes/2015/11/11/lifestyle/1447233113_118165_1447236178_noticia_normal.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="http://www.domesticatueconomia.es/wp-content/uploads/2017/12/compras-online-seguras-p.jpg" alt="Third slide">
+      <img class="d-block w-100" src="https://i2.wp.com/coapinavarra.org/wp-content/uploads/2017/11/centrocomercial.jpeg?fit=800%2C600" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -35,20 +35,20 @@ foreach($productos as $producto){
     <div class="row justify-content-md-center">
         <div class="col" class="col_bg"><h5>Tipo de producto:</h5>'.
         $producto['tipo_producto'] .
-       '<h4>Nombre:</h4>'. 
+       '<hr><h4>Nombre:</h4>'. 
         $producto['nombre'] .
-        '<h5>Descripción:</h5>'.
+        '<hr><h5>Descripción:</h5>'.
 
         $producto['comentarios'] .
         '</div>
-        <div>
+        <div style="padding: 5px;">
           <img width="300" height="300" src="data:'. get_mime_type($producto['foto_marketing']['nombre_archivo']).';base64, ' . $producto['foto_marketing']['contenido_archivo'] .'"/>
         </div>
-        <div>
+        <div  style="padding: 5px;">
         <img width="300" height="300" src="data:'. get_mime_type($producto['foto_real']['nombre_archivo']) .';base64, ' . $producto['foto_real']['contenido_archivo'] . '"/>
         </div>
         <div>
-        <a href="' .'/detalleproductos/' .$producto["id"]. '">Leer más</a>
+        <button style="padding: 5px; margin-left: 5px;"><a href="' .'/detalleproductos/' .$producto["id"]. '">Leer más</a></button>
         </div>
     </div>
     </div>

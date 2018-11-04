@@ -24,14 +24,14 @@
 }
 .back_css{
     background-repeat: no-repeat;
-    background-image: url('/prod/listaproductos/coins-912717_1920.jpg');
+    background-image: url('/prod/listaproductos/fondo1.jpg');
     background-attachment: fixed;
 }
 
 .divproductos{
     border-style: double;
     border: #030303 2px;
-    background: #C7C7C7;
+    background: rgb(253, 253, 253);
     padding: 40px;
 }
 
