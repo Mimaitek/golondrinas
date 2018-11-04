@@ -174,7 +174,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
                 var_dump($last_id);
 
         
-            addMensaje("Enhorabuena". ucfirst($_SESSION["usuario"])  . "Pronto subiremos tu publicación");
+            addMensaje("Enhorabuena ". ucfirst($_SESSION["usuario"])  . " Pronto subiremos tu publicación");
 
             // primero, guardar en la tabla producto el producto
            
@@ -185,7 +185,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
             // guardar, las imagenes, usando la funcion aniadeFotoProducto (hay que completarla!!!!)
                 aniadeFotoProducto($last_id, $_FILES["marketing_foto"], 'marketing');
                 aniadeFotoProducto($last_id, $_FILES["producto_foto"], 'real');
-                addMensaje("Producto enviado");
+                
 
             }else{
                 addError("Error en la inserción de datos");

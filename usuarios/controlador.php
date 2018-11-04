@@ -16,6 +16,7 @@
       if(RUTA_ACTUAL == '/logout/'){
         $_SESSION["usuario"]="";
         Header('Location: /');
+        addMensaje("Hasta Pronto!!");
       }
   
 
