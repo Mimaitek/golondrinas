@@ -110,3 +110,8 @@ h1{
     text-align: right;
     font-weight: bolder;
 }
+
+
+.toast-content {
+    z-index: 1000;
+}

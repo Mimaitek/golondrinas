@@ -72,7 +72,7 @@ function getImageMarke($producto_id){
         while ($imagen = mysqli_fetch_assoc($resultado)) {
 
             return $imagen;
-    }
+         }
     }
 }
 
