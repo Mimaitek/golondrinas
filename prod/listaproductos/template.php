@@ -1,13 +1,13 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner" style="height: 400px;">
+  <div class="carousel-inner" style="height: 500px;">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://cdn.pagatelia.com/images/ing/oferta-via-t-clientes-ing-direct_ok.jpg" alt="First slide">
+      <img class="d-block w-100" src="https://www.esan.edu.pe/apuntes-empresariales/2017/03/21/principal-funciones-de-la-gestion-de-compras.jpg" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://i.ytimg.com/vi/to4JAIRlsv4/maxresdefault.jpg" alt="Second slide">
+      <img class="d-block w-100" src="https://impresa.prensa.com/vivir/Compras-seguras_LPRIMA20171123_0106_27.jpg" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://media.metrolatam.com/2018/02/13/movistarfusionsmarttv-1200x800.jpg" alt="Third slide">
+      <img class="d-block w-100" src="http://www.domesticatueconomia.es/wp-content/uploads/2017/12/compras-online-seguras-p.jpg" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

@@ -113,13 +113,13 @@ function verificarContrasena($contrasena){
                     if(verificar_email($email)){
                       if(compruebaRegistro($usuario,$email) AND  verificarContrasena($contrasena)){
                         agregarUsuario($usuario,$email,$passHash);
-                        echo "Registro completado";
+                       addMensaje("Registro completado");
                     }
                       }else{
-                        echo "Email incorrecto";
+                        addError("Email incorrecto");
                       }
                   }else{
-                    echo "Usuario incorrecto";
+                    addError("Usuario incorrecto");
                   }
                 
                  

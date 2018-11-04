@@ -2,15 +2,15 @@
 lo que permitirá realizar diferentes acciones. Variarán sobre todo en base si has hecho login en la web o no -->
 <nav class="navbar navbar-expand-lg navbar-light" id="menu">
   <a class="navbar-brand" href="/">
-  <img src="https://image.flaticon.com/icons/svg/47/47244.svg" width="30" height="30" class="d-inline-block align-top" alt="">Inicio</a>
+  <img src="https://image.flaticon.com/icons/svg/47/47244.svg" width="30" height="30" class="d-inline-block align-top" alt="">Genios del Marketing</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
-    <li class="nav-item active">
+    <!--<li class="nav-item active">
         <a class="nav-link" href="#">Genios Del Marketing <span class="sr-only">(current)</span></a>
-     </li>
+     </li>-->
       
       
       
@@ -53,14 +53,14 @@ lo que permitirá realizar diferentes acciones. Variarán sobre todo en base si 
     ?>
       
       
-      <li >
+     <!-- <li >
         <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+      </li>-->
     </ul>
     </div>
  </nav>
  <!--Aquí podremos hacer unas búsquedas dependiendo de la sección en donde se encuentre el producto-->
-    <ul class="nav justify-content-center">
+   <!-- <ul class="nav justify-content-center">
        <li class="nav-item">
          <a class="nav-link active" href="#">Nuevos</a>
        </li>
@@ -82,5 +82,5 @@ lo que permitirá realizar diferentes acciones. Variarán sobre todo en base si 
           <a class="dropdown-item" href="#">Deportes</a>
         </div>
       </li>
-    </ul>
+    </ul>-->
   

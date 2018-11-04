@@ -33,7 +33,6 @@ function compruebaUsuario($usuario){
         $contrasena = $_POST["contrasena"];
 
         if(password_verify($contrasena, $pass)){
-            echo "Password correcto";
             return $id_usuario;
         }else{
             return 0;
@@ -56,12 +55,13 @@ if(($_SERVER['REQUEST_METHOD'])== "POST"){
     $id_usuario = compruebaUsuario($usuario);
     
        if($id_usuario){
-        echo "Login completado";
         $_SESSION["usuario"] = $usuario;
         $_SESSION["id_usuario"] = $id_usuario;
+        addMensaje("Login correcto");
         Header('Location: /');
+        
         }else{
-            echo "Error de login";
+            addError("Error de login");
         }
     }
 
