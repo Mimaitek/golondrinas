@@ -100,21 +100,12 @@ de las diferentes secciones de la web-->
       $( document ).ready(function() {
         for(var n=0; n<window.__mensajes.length; n++){
             var mensaje = window.__mensajes[n];
-            Toastify({
-            text: mensaje,
-            duration: 3000,
-            backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
-            className: "toast-content"
-            }).showToast();
+            muestraMensaje(mensaje);
+
           }
           for(var n=0; n<window.__errores.length; n++){
             var error = window.__errores[n];
-            Toastify({
-            text: error,
-            duration: 3000,
-            backgroundColor: "linear-gradient(to right, #ff3642, #ff727a)",
-            className: "toast-content"
-            }).showToast();
+            muestraError(error);
           }
       });
     </script>
