@@ -9,11 +9,18 @@ $usuarioSesion = $_SESSION["usuario"];
 
 
 if (isset($_POST["enviar"])){
-
     $contenido = $_POST["comentariosProducto"];
     $fecha = fechaHoy();
    
+
+    if($contenido == ""){
+        echo "error no insercion de datos";
+
+    }else{
+
+   
     insertarComentarios($ID_PRODUCTO, $contenido,$fecha); 
+    }
 
 }
 
@@ -113,9 +120,5 @@ function recuperarComentarios($producto_id){
 }
 }
 
-function recuperarUsuario(){
-    $conexion = getConexion();
-    $consulta = "SELECT * FROM usuarios";
-}
 
 ?>

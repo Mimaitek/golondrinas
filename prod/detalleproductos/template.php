@@ -1,7 +1,29 @@
 <div class="detalleproducto">
+<script>
+
+window._comentarioValido = false;
+     
+    
+
+    function checkeaBotonSubmit() {
+        
+        var boton = document.getElementById('botonenvio');
+        if(window._comentarioValido) {
+            boton.disabled = false;
+           
+            
+        } else {
+            boton.disabled = true;
+            muestraError("Comentario vacío");
+        }
+    }
+
+
+
+</script>
+
 <?php
 $producto = getProductoDetalle($ID_PRODUCTO);
-
 
 ?>
 <div class="container">
@@ -44,6 +66,8 @@ foreach($comentarios as $comentario){
 
         ucfirst($comentario['usuario'])  .
         '</div>
+        <button type="button" class="btn btn-success" id="megusta" name="megusta"><img src="/prod/detalleproductos/icons8-me-gusta-64.png" alt="megusta" height="20" width="20"></button>
+        <button type="button" class="btn btn-danger" id="nomegusta" name="nomegusta"><img src="/prod/detalleproductos/icons8-pulgar-hacia-abajo-64.png" alt="nomegusta" height="20" width="20"></button>
        
     </div>
     </div></div><hr>';
@@ -59,8 +83,10 @@ foreach($comentarios as $comentario){
 if($usuarioSesion = $_SESSION["usuario"]){
     echo "<form method='POST'><div class='detallecomentario'><fieldset>
     <legend>Envía un comentario</legend>
-    <textarea rows='4' cols='110' autofocus placeholder='Escribe tu comentario...' style='overflow:auto;resize:none' name='comentariosProducto'></textarea><hr>
-    <input class='btn btn-primary' type='submit' value='enviar' name='enviar'></fieldset></div></form>";
+    <textarea rows='4' cols='110' autofocus placeholder='Escribe tu comentario...' style='overflow:auto;resize:none' id='comentarios'  name='comentariosProducto'
+    onblur='window._comentarioValido = validacion(\"comentarios\", \"mensajecomentarios\", \"\"); checkeaBotonSubmit();'></textarea><hr>
+    <input class='btn btn-primary' type='submit' value='enviar' name='enviar' id='botonenvio' disabled></fieldset></div></form>
+    <div id=\"mensajecomentarios\"></div>";
 }else{
     echo "<div class='detallecomentario'><fieldset>
     <legend>Envía un comentario</legend>

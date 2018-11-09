@@ -38,3 +38,21 @@
    }
 
   }*/
+
+  function muestraError(mensaje){
+    Toastify({
+      text: mensaje,
+      duration: 3000,
+      backgroundColor: "linear-gradient(to right, #ff3642, #ff727a)",
+      className: "toast-content"
+      }).showToast();
+  }
+
+  function muestraMensaje(mensaje){
+    Toastify({
+      text: mensaje,
+      duration: 3000,
+      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+      className: "toast-content"
+      }).showToast();
+  }
