@@ -56,7 +56,7 @@ $producto = getProductoDetalle($ID_PRODUCTO);
 $comentarios = recuperarComentarios($ID_PRODUCTO);
 
 foreach($comentarios as $comentario){
-    echo '<div style="text-align:left; margin-top:20px; padding: 10px;"><div class="container">
+    echo '<div style="text-align:left; margin-top:20px; padding:10px;"><div class="container">
     <div class="row">
         <div class="col-12"><br>Fecha publicación '.
         $comentario['fecha'] .
@@ -64,13 +64,24 @@ foreach($comentarios as $comentario){
        str_replace("\n", "<br/>", $comentario['contenido'])    .
         '</div><div class="col-4"> Usuario: '.
 
-        ucfirst($comentario['usuario'])  .
-        '</div>
-        <button type="button" class="btn btn-success" id="megusta" name="megusta"><img src="/prod/detalleproductos/icons8-me-gusta-64.png" alt="megusta" height="20" width="20"></button>
-        <button type="button" class="btn btn-danger" id="nomegusta" name="nomegusta"><img src="/prod/detalleproductos/icons8-pulgar-hacia-abajo-64.png" alt="nomegusta" height="20" width="20"></button>
+        ucfirst($comentario['usuario']). '<br><br>  <span style="background: green; color: white; border: double 2px black; padding:10px;">Puntuación total: ' . votosComentario($comentario['id']) . '</span>'.
        
-    </div>
-    </div></div><hr>';
+        '</div>
+       </div>
+       </div></div>';
+       $disabled = '';
+       if(comentarioFueVotado($comentario['id'])) {
+           $disabled = ' disabled ';
+       }
+
+
+       if($usuarioSesion = $_SESSION["usuario"]){
+        echo '<form method="POST"><div style="text-align:left";>
+        <input type="hidden" name="comentario" value="' . $comentario['id'] . '"/>
+    <button type="submit" class="btn btn-success" id="megusta" ' . $disabled . 'name="voto-comentario" value="1"><img src="/prod/detalleproductos/icons8-me-gusta-64.png" alt="megusta" height="20" width="20"></button>
+    <button type="submit" class="btn btn-danger" id="nomegusta" ' . $disabled . 'name="voto-comentario" value="-1"><img src="/prod/detalleproductos/icons8-pulgar-hacia-abajo-64.png" alt="nomegusta" height="20" width="20"></button></div>';
+       }
+      echo '</form><hr>';
 }
 
 
@@ -84,7 +95,7 @@ if($usuarioSesion = $_SESSION["usuario"]){
     echo "<form method='POST'><div class='detallecomentario'><fieldset>
     <legend>Envía un comentario</legend>
     <textarea rows='4' cols='110' autofocus placeholder='Escribe tu comentario...' style='overflow:auto;resize:none' id='comentarios'  name='comentariosProducto'
-    onblur='window._comentarioValido = validacion(\"comentarios\", \"mensajecomentarios\", \"\"); checkeaBotonSubmit();'></textarea><hr>
+    onkeyup='window._comentarioValido = validacion(\"comentarios\", \"mensajecomentarios\", \"\"); checkeaBotonSubmit();'></textarea><hr>
     <input class='btn btn-primary' type='submit' value='enviar' name='enviar' id='botonenvio' disabled></fieldset></div></form>
     <div id=\"mensajecomentarios\"></div>";
 }else{

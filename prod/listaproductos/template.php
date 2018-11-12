@@ -50,7 +50,10 @@ foreach($productos as $producto){
         <div>
         <button style="padding: 5px; margin-left: 5px;"><a href="' .'/detalleproductos/' .$producto["id"]. '">Leer más</a></button>
         </div>
+       
     </div>
+    <button type="button" class="btn btn-success" id="megusta" name="megusta"><img src="/prod/detalleproductos/icons8-me-gusta-64.png" alt="megusta" height="20" width="20"></button>
+    <button type="button" class="btn btn-danger" id="nomegusta" name="nomegusta"><img src="/prod/detalleproductos/icons8-pulgar-hacia-abajo-64.png" alt="nomegusta" height="20" width="20"></button>
     </div>
     <div style="padding-bottom: 300px;"></div>';
 }
