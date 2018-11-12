@@ -48,14 +48,25 @@ foreach($productos as $producto){
         <img width="300" height="300" src="data:'. get_mime_type($producto['foto_real']['nombre_archivo']) .';base64, ' . $producto['foto_real']['contenido_archivo'] . '"/>
         </div>
         <div>
-        <button style="padding: 5px; margin-left: 5px;"><a href="' .'/detalleproductos/' .$producto["id"]. '">Leer más</a></button>
+        <button style="padding: 5px; margin-left: 5px;"><a href="' .'/detalleproductos/' .$producto["id"]. 
+        
+        '">Leer más</a></button>
         </div>
        
-    </div>
-    <button type="button" class="btn btn-success" id="megusta" name="megusta"><img src="/prod/detalleproductos/icons8-me-gusta-64.png" alt="megusta" height="20" width="20"></button>
-    <button type="button" class="btn btn-danger" id="nomegusta" name="nomegusta"><img src="/prod/detalleproductos/icons8-pulgar-hacia-abajo-64.png" alt="nomegusta" height="20" width="20"></button>
-    </div>
-    <div style="padding-bottom: 300px;"></div>';
+    </div>';
+    $disabled = '';
+    if(productoFueVotado($producto['id'])) {
+        $disabled = ' disabled ';
+   }
+
+
+      if($usuarioSesion = $_SESSION["usuario"]){
+      echo '<form method="POST"><input type="hidden" name="producto_id" value="' . $producto['id'] . '"/>
+    <button type="submit" class="btn btn-success" id="megusta" ' . $disabled . ' name="voto_producto" value="1"><img src="/prod/detalleproductos/icons8-me-gusta-64.png" alt="megusta" height="20" width="20"></button>
+    <button type="submit" class="btn btn-danger" id="nomegusta" ' . $disabled . ' name="voto_producto" value="-1"><img src="/prod/detalleproductos/icons8-pulgar-hacia-abajo-64.png" alt="nomegusta" height="20" width="20"></button>
+    </form></div>';
+  }
+    echo '<div style="padding-bottom: 300px;"></div>';
 }
 
 ?>

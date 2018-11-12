@@ -1,8 +1,21 @@
 <?php require_once(dirname(__FILE__)."/../../conexion.php"); ?>
 
 <?php
- 
-//Comprobar si el usuario está registrado y si tiene permiso para subir productos.
+
+if(isset($_POST["producto_id"]) && (isset($_POST["voto_producto"]))){
+
+    $producto_id = $_POST["producto_id"];
+    $voto_producto = $_POST["voto_producto"];
+
+    if(!productoFueVotado($producto_id)){
+        $conexion = getConexion();
+        $usuarioSesion = $_SESSION["id_usuario"];
+        $consulta = "INSERT INTO Votos_Productos (usuario_id, producto_id, puntuacion) VALUES ('$usuarioSesion', '$producto_id', '$voto_producto');";
+        $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
+    }
+
+}
+
 
 $pagina_siguiente = true;
 $pagina_actual = 1;
@@ -94,3 +107,48 @@ function getImageReal($producto_id){
 
 
 
+function productoFueVotado($producto_id) {
+    /*
+    Tiene que retornar un booleano
+    */
+    $id_usuario = $_SESSION["id_usuario"];
+    $conexion = getConexion();
+    $consulta = "SELECT * FROM Votos_Productos WHERE usuario_id = '$id_usuario' AND producto_id = '$producto_id'";
+    $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
+
+    if($resultado) {
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            return true;
+        }
+    }
+    return false;
+
+}
+
+function votosProducto($producto_id) {
+    /*
+    tiene que retornar un int
+    */
+
+    $id_usuario = $_SESSION["id_usuario"];
+    $conexion = getConexion();
+    $consulta = "SELECT * FROM Votos_Productos WHERE producto_id = '$producto_id'";
+    $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
+
+    $total = 0;
+    if($resultado) {
+ 
+        while ($producto = mysqli_fetch_assoc($resultado)) {
+            $voto = intval($producto['puntuacion']);
+            $total += $voto;
+        }
+
+    }
+
+    return $total;
+
+}
+
+
+
+?>
