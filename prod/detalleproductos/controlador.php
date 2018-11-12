@@ -8,6 +8,22 @@ $ID_PRODUCTO = str_replace('/detalleproductos/', '', RUTA_ACTUAL);
 $usuarioSesion = $_SESSION["usuario"];
 
 
+if (isset($_POST["comentario"]) && isset($_POST["voto-comentario"])){
+    $comentario = $_POST['comentario'];
+    $voto_comentario = $_POST["voto-comentario"];
+
+    if(!comentarioFueVotado($comentario)) {
+
+        $conexion = getConexion();
+        $usuarioSesion = $_SESSION["id_usuario"];
+        $consulta = "INSERT INTO Votos_Comentarios (usuario_id, comentario_id, puntuacion) VALUES ('$usuarioSesion', '$comentario', '$voto_comentario');";
+        $resultado = mysqli_query($conexion,$consulta) or die(mysqli_error($conexion));
+    }
+
+
+}
+
+
 if (isset($_POST["enviar"])){
     $contenido = $_POST["comentariosProducto"];
     $fecha = fechaHoy();
@@ -119,6 +135,50 @@ function recuperarComentarios($producto_id){
 
 }
 }
+//Funciones referentes a los comentarios de la vista detalles de los productos.
+
+function comentarioFueVotado($comentario_id) {
+    /*
+    Tiene que retornar un booleano
+    */
+    $id_usuario = $_SESSION["id_usuario"];
+    $conexion = getConexion();
+    $consulta = "SELECT * FROM Votos_Comentarios WHERE usuario_id = '$id_usuario' AND comentario_id = '$comentario_id'";
+    $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
+
+    if($resultado) {
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            return true;
+        }
+    }
+    return false;
+
+}
+
+function votosComentario($comentario_id) {
+    /*
+    tiene que retornar un int
+    */
+
+    $id_usuario = $_SESSION["id_usuario"];
+    $conexion = getConexion();
+    $consulta = "SELECT * FROM Votos_Comentarios WHERE comentario_id = '$comentario_id'";
+    $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
+
+    $total = 0;
+    if($resultado) {
+ 
+        while ($comentario = mysqli_fetch_assoc($resultado)) {
+            $voto = intval($comentario['puntuacion']);
+            $total += $voto;
+        }
+
+    }
+
+    return $total;
+
+}
+
 
 
 ?>
