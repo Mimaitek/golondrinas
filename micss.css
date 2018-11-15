@@ -26,13 +26,14 @@
     background-repeat: no-repeat;
     background-image: url('/prod/listaproductos/fondo1.jpg');
     background-attachment: fixed;
+    width: 100%;
 }
 
 .divproductos{
     border-style: double;
     border: #030303 2px;
     background: rgb(253, 253, 253);
-    padding: 40px;
+
 }
 
 .divcomentarios{
@@ -97,14 +98,12 @@ h1{
 
 }
 
-
-
 #menu{
-    background-color: #D5D8DC  ;
-
+    background-color: #F2C115 !important;
 }
+
 .page-footer {
-    background-color: #D5D8DC;
+    background-color:#F2C115;
 }
 .form-group{
     text-align: right;
@@ -115,3 +114,8 @@ h1{
 .toast-content {
     z-index: 1000;
 }
+
+
+
+
+ 
