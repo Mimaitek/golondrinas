@@ -2,7 +2,7 @@
 lo que permitirá realizar diferentes acciones. Variarán sobre todo en base si has hecho login en la web o no -->
 <nav class="navbar navbar-expand-lg navbar-light" id="menu">
   <a class="navbar-brand" href="/">
-  <img src="https://image.flaticon.com/icons/svg/47/47244.svg" width="30" height="30" class="d-inline-block align-top" alt="">Genios del Marketing</a>
+  <img src="/logo.png" width="40" height="40" class="d-inline-block align-top" alt=""> Genios del Marketing</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
