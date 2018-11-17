@@ -20,40 +20,36 @@
   </a>
 </div>
 
-<div class="head_css">
+<div class="container">
 <h2>Lista de productos</h2>
 
-</div>
+
 
 <div class="back_css">
 <?php
  //get_mime_type("mifoto.jPG");
 
+ // <!--<h6>Descripción :</h6>'.$producto['comentarios'] Por si necesito imprimir los comentarios
 
 foreach($productos as $producto){
-    echo '<div class="divproductos" class="container">
-    <div class="row justify-content-md-center">
-        <div class="col" class="col_bg"><h5>Tipo de producto:</h5>'.
-        $producto['tipo_producto'] .
-       '<hr><h4>Nombre:</h4>'. 
-        $producto['nombre'] .
-        '<hr><h5>Descripción:</h5>'.
-
-        $producto['comentarios'] .
-        '</div>
-        <div style="padding: 5px;">
-          <img width="300" height="300" src="data:'. get_mime_type($producto['foto_marketing']['nombre_archivo']).';base64, ' . $producto['foto_marketing']['contenido_archivo'] .'"/>
+    echo '<div class="divproductos">
+              <div class="container-fluid">
+                  <div class="row">
+                     <div class="col">
+                        <h6  style="color: #197575 !important;">Categoria :'.ucfirst ($producto['tipo_producto']) .'</h6><hr>
+                        <h5 style="color: #197575 !important; font-size: 20px; font-weight: bolder;">'. ucfirst ($producto['nombre']) .'</h5><hr>    
+                    <br><br><button class="botons3"><a href="' .'/detalleproductos/' .$producto["id"]. '">Leer más</a></button>
+                    </div>
+                     <div class="col" style="text-align:center; padding-top: 20px;">
+                         <img width="100" height="100" src="data:'. get_mime_type($producto['foto_marketing']['nombre_archivo']).';base64, ' . $producto['foto_marketing']['contenido_archivo'] .'"/>
+                         <img width="100" height="100" src="data:'. get_mime_type($producto['foto_real']['nombre_archivo']) .';base64, ' . $producto['foto_real']['contenido_archivo'] . '"/>
+                     </div>
+                 <div>
+                
+              </div>
         </div>
-        <div  style="padding: 5px;">
-        <img width="300" height="300" src="data:'. get_mime_type($producto['foto_real']['nombre_archivo']) .';base64, ' . $producto['foto_real']['contenido_archivo'] . '"/>
         </div>
-        <div>
-        <button style="padding: 5px; margin-left: 5px;"><a href="' .'/detalleproductos/' .$producto["id"]. 
-        
-        '">Leer más</a></button>
-        </div>
-       
-    </div>';
+        </div>';
     $disabled = '';
     if(productoFueVotado($producto['id'])) {
         $disabled = ' disabled ';
@@ -61,29 +57,32 @@ foreach($productos as $producto){
 
 
       if($usuarioSesion = $_SESSION["usuario"]){
-      echo '<form method="POST"><input type="hidden" name="producto_id" value="' . $producto['id'] . '"/>
+      echo '<br><form method="POST"><input type="hidden" name="producto_id" value="' . $producto['id'] . '"/>
     <button type="submit" class="btn btn-success" id="megusta" ' . $disabled . ' name="voto_producto" value="1"><img src="/prod/detalleproductos/icons8-me-gusta-64.png" alt="megusta" height="20" width="20"></button>
     <button type="submit" class="btn btn-danger" id="nomegusta" ' . $disabled . ' name="voto_producto" value="-1"><img src="/prod/detalleproductos/icons8-pulgar-hacia-abajo-64.png" alt="nomegusta" height="20" width="20"></button>
     </form></div>';
   }
-    echo '<div style="padding-bottom: 300px;"></div>';
+    
 }
 
 ?>
 </div>
 <div class="btn-group" role="group" aria-label="Basic example">
 <?php if($pagina_anterior){ 
-  echo '<a class="btn btn-secondary" href="/?page='
+  echo '<a class="btn btn-secondary" id="botons" href="/?page='
   . ($pagina_actual-1)
   . '">Anterior</a>';
 } 
 
 if($pagina_siguiente){ 
-  echo '<a class="btn btn-secondary" href="/?page='
+  echo '<a class="btn btn-secondary" id="botons2" href="/?page='
   . ($pagina_actual+1)
   . '">Siguiente</a>';
 
 }
   ?>
 
+</div>
+</div>
+</div>
 </div>

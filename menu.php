@@ -10,11 +10,7 @@ lo que permitirá realizar diferentes acciones. Variarán sobre todo en base si 
     <ul class="navbar-nav">
     <!--<li class="nav-item active">
         <a class="nav-link" href="#">Genios Del Marketing <span class="sr-only">(current)</span></a>
-     </li>-->
-      
-      
-      
-      
+     </li>--> 
     <?php
     if(!estasLogado()) {
       echo "
@@ -51,8 +47,6 @@ lo que permitirá realizar diferentes acciones. Variarán sobre todo en base si 
 
     }
     ?>
-      
-      
      <!-- <li >
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>-->
