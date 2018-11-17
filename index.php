@@ -15,9 +15,11 @@ de las diferentes secciones de la web-->
     <link href="https://fonts.googleapis.com/css?family=Modern+Antiqua" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link href="/micss.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   </head>
   <body>
   <?php
@@ -45,6 +47,15 @@ de las diferentes secciones de la web-->
      if(RUTA_ACTUAL == '/'  ||  (strrpos(RUTA_ACTUAL, '/?') == 0) && is_int(strrpos(RUTA_ACTUAL, '/?'))){
       require_once('prod/controlador.php');
     }
+    elseif(RUTA_ACTUAL == '/avisolegal/'){
+      require_once('avisolegal.php');
+    }
+    elseif(RUTA_ACTUAL == '/ayuda/'){
+      require_once('ayuda.php');
+    } 
+    elseif(RUTA_ACTUAL == '/contacto/'){
+      require_once('contacto.php');
+    }
       elseif(RUTA_ACTUAL == '/login/'){
         require_once('usuarios/controlador.php');
       }
@@ -64,6 +75,7 @@ de las diferentes secciones de la web-->
       elseif(strrpos(RUTA_ACTUAL, '/detalleproductos/') == 0){
         require('prod/controlador.php');
       }
+
     ?>
     <!--Aqui añado el footer para completar la web, y añado utiles donde estan alojados los mensajes de error-->
 
@@ -109,6 +121,27 @@ de las diferentes secciones de la web-->
           }
       });
     </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#01a98c"
+    },
+    "button": {
+      "background": "#f2c115"
+    }
+  },
+  "position": "bottom-right",
+  "content": {
+    "message": "Esta web utiliza cookies para asegurarse de que consigues la mejor experiencia.",
+    "dismiss": "Acepto",
+    "link": "Leer más",
+    "href": "avisolegal.php"
+  }
+})});
+</script>
   </body>
   
 </html>

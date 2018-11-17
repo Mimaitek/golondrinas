@@ -61,7 +61,7 @@
 }
 
 *{
-        font-family: 'Merienda', cursive;
+    font-family: 'Roboto', sans-serif;
         font-size: 18px;
       }
 h1{
@@ -116,6 +116,36 @@ h1{
 }
 
 
+.avisolegal{
+    color: #F2C115 !important; 
+    text-align: center;
+}
+
+.avisolegal2{
+    color: rgb(2, 133, 56) !important;
+    text-align: center;
+}
+a:link{
+    text-decoration: none !important;
+}
 
 
- 
+.bloques{
+    padding:30px;
+}
+#contacto{
+    background-color: #197575 !important;
+
+}
+a{
+    color: #197575 !important;
+    font-size: 20px;
+    font-weight: 200;
+}
+.lineaverde{
+    background: #197575 !important;
+    height: 3px;
+    width: 100%;
+    text-align: right;
+}
+
