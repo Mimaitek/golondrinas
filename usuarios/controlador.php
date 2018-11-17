@@ -7,7 +7,7 @@
       }
       if(RUTA_ACTUAL == '/perfil/'){
         if(!($_SESSION["usuario"])){
-          header("Location: /login/");
+          header("Location: /login/");  
         }else{
           require_once('perfil/controlador.php');
         }
@@ -16,10 +16,9 @@
       if(RUTA_ACTUAL == '/logout/'){
         $_SESSION["usuario"]="";
         Header('Location: /');
-        addMensaje("Hasta Pronto!!");
       }
   
-
+    
 
  
 ?>
