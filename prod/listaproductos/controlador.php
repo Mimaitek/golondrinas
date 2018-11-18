@@ -40,7 +40,7 @@ require("template.php");
 function getProductos(){
 
     global $pagina_actual, $pagina_siguiente;
-    $limit = 2;
+    $limit = 6;
     $offset = $limit*($pagina_actual -1);
 
     $conexion = getConexion();

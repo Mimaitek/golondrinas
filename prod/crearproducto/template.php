@@ -32,7 +32,7 @@
 <?php  echo "<h1>Bienvenido " .ucfirst($_SESSION["usuario"]) . ", Sube tus propios reviews </h1>"?>
     <div class="container-productos" id="formulario">
         <div class="row">
-            <div class="col-8">
+            <div class="col-12">
                 <form action="#" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="producto">Nombre del producto</label>
@@ -84,13 +84,11 @@
                 </div>
             
             
-                <button type="submit" class="btn btn-primary" name="enviar" id="botonenvio" disabled>Submit</button>
+                <button type="submit" class="btn btn-primary" name="enviar" id="botonenvio" disabled>Enviar</button>
                 <div id="contenedor_errores"></div>
                 </form>
              </div>
-            <div class="col-4">
-            <img src="/prod/crearproducto/compras.png" alt="compras" width="400px" height="300px";/>
-             </div>
+          
         </div>
         
     </div>

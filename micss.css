@@ -28,10 +28,12 @@ body{
 }
 
 .divproductos{
-    border: solid #197575 1px;
+    border: solid #197575 2px;
     padding-left: 40px;
-    padding-top: 20px;
-    background-color: #D6DE76;
+    padding-top:5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: f1f79e;
 }
 .divcomentarios{
     border-style: double;
@@ -70,10 +72,7 @@ h1{
     background-image: url('/usuarios/registro/usuarios1.jpg');
 }
 
-.fondo-perfil{
-    background-image: url('/usuarios/perfil/fondoperfil.jpg');
-    padding:10px;
-}
+
 .fondo-perfil label, .fondo-perfil h1{
     color:white;
 }
@@ -159,5 +158,5 @@ a{
     padding: 2px; 
     background: white !important;
     margin-bottom: 2px;
-    border-radius: 40%;
+    border-radius: 10%;
 }

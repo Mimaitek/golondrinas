@@ -1,6 +1,6 @@
 <!-- Template para el footer donde incluyo una breve explicación de la web, además de los enlaces a las redes sociales. 
 Y el enlace directo a varias secciones de la web como "Sobre nosotros, Productos, Contacto y Ayuda" acecesibles a cualquier usuario. -->
-<div >
+<div style="align-self: flex-end; bottom: 0; left: 0;right: 0; height: 100px;" >
 <footer class="page-footer font-small indigo">
 
     
