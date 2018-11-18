@@ -7,7 +7,7 @@ if (!isset($_SESSION)) {
  <div class="fondo-perfil">
  
 
-      <h1>Edita tu perfil <?php echo $_SESSION["usuario"];?></h1>
+      <h1>Edita tu perfil <?php echo ucfirst($_SESSION["usuario"]);?></h1>
       <form action="#" method="POST">
           <div class="container">
               <div class="row">

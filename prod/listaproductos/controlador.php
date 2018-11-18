@@ -111,6 +111,11 @@ function productoFueVotado($producto_id) {
     /*
     Tiene que retornar un booleano
     */
+if(!isset($_SESSION["id_usuario"])){
+    return false;
+}
+
+
     $id_usuario = $_SESSION["id_usuario"];
     $conexion = getConexion();
     $consulta = "SELECT * FROM Votos_Productos WHERE usuario_id = '$id_usuario' AND producto_id = '$producto_id'";

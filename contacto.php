@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container fondooscuro">
     <div class="row">
         <div class="col">
             <div class="bloques">
@@ -18,7 +18,7 @@
 
     </div>
 </div>
-<div class="container">
+<div class="container fondooscuro">
             <div class="bloques">
             <h5 class="text-center">Síguenos también en nuestras redes sociales!! Comparte y difunde a tus amigos.</h5>
             <div style="text-align: center;">

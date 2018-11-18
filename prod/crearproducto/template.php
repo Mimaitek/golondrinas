@@ -29,8 +29,8 @@
 
 </script>
 <div class="fondo-productos">
-<?php  echo "<h1>Bienvenido " .ucfirst($_SESSION["usuario"]) . ", Sube tus propios reviews </h1>"?>
-    <div class="container-productos" id="formulario">
+<?php  echo "<h1 style='color: white;'>Bienvenido " .ucfirst($_SESSION["usuario"]) . ", Sube tus propios reviews </h1>"?>
+    <div class="container-productos" id="formulario" >
         <div class="row">
             <div class="col-12">
                 <form action="#" method="POST" enctype="multipart/form-data">
@@ -84,7 +84,7 @@
                 </div>
             
             
-                <button type="submit" class="btn btn-primary" name="enviar" id="botonenvio" disabled>Enviar</button>
+                <button type="submit" class="btn btn-primary btn-lg" name="enviar" id="botonenvio" disabled>Enviar</button>
                 <div id="contenedor_errores"></div>
                 </form>
              </div>

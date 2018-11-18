@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container fondooscuro">
     <div class="row">
         <div class="col">
             <div class="bloques">

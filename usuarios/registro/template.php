@@ -1,13 +1,13 @@
 
 <!--Template para formalizar el registro en la web-->
-<div class="fondo-registro">
+
   <div class="container container-registro">
 
       <h1>Registrate</h1>
       <form action="#" method="POST">
           <div class="container">
               <div class="row">
-                  <div class="col">
+                  <div class="col-8">
                       <div class="form-group">
                           <label for="email">Correo Electrónico</label>
                           <input type="text" class="form-control" id="email"  placeholder="Introduzca su email" name="email">
@@ -27,12 +27,16 @@
                       <button type="submit" class="btn btn-primary" style="margin:50px;" name="enviar">Enviar</button>
                       
                   </div>
-                  <div class="col">
-                  
-                  </div>
-                  
+
+                    <div class="col-4">
+                        <br><br>
+                        <img src="/imagenes/red.svg" class="img-fluid" alt="Responsive image" width="200px" height="200px">
+                        
+                    </div>
+                    
+
+                </div>
               </div>
           </div>
       </form>
   </div>
-</div>

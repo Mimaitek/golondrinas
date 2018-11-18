@@ -1,28 +1,12 @@
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner" style="height: 500px;">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="https://www.diligent.es/wp-content/uploads/2017/04/aumentar-frecuencia-de-compras-de-tu-tienda-online.jpg" alt="First slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://d500.epimg.net/cincodias/imagenes/2015/11/11/lifestyle/1447233113_118165_1447236178_noticia_normal.jpg" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://i2.wp.com/coapinavarra.org/wp-content/uploads/2017/11/centrocomercial.jpeg?fit=800%2C600" alt="Third slide">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
+<?php
+if($pagina_actual ==1){
+    echo '<img src="/imagenes/dibujo-1.svg" class="img-fluid" alt="Responsive image"style="width:100%;">';
+}
+?>
 <div class="container">
-<h2>Lista de productos</h2>
-
+  
+      <h2 class="tituloHome">Últimos Reviews</h2>
+  
 
 
 <div class="back_css">
@@ -38,7 +22,7 @@ foreach($productos as $producto){
  }
 
 
-    if($usuarioSesion = $_SESSION["usuario"]){
+    if(isset($_SESSION["usuario"]) && $usuarioSesion = $_SESSION["usuario"]){
       $botones_votos = '<form style="display: inline;" method="POST"><input type="hidden" name="producto_id" value="' . $producto['id'] . '"/>
   <button type="submit" class="btn btn-success" id="megusta" ' . $disabled . ' name="voto_producto" value="1"><img src="/prod/detalleproductos/icons8-me-gusta-64.png" alt="megusta" height="20" width="20"></button>
   <button type="submit" class="btn btn-danger" id="nomegusta" ' . $disabled . ' name="voto_producto" value="-1"><img src="/prod/detalleproductos/icons8-pulgar-hacia-abajo-64.png" alt="nomegusta" height="20" width="20"></button>

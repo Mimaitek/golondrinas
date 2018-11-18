@@ -4,7 +4,7 @@ if (!isset($_SESSION)) {
 }
 ?>
 
-<div class="container">
+<div class="container fondooscuro" >
 <h1>Accede con tu Usuario</h1>
   <form action="#" method="POST"> 
    <div class="row">
