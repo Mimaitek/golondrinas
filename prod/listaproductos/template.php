@@ -1,11 +1,28 @@
 <?php
 if($pagina_actual ==1){
-    echo '<img src="/imagenes/dibujo-1.svg" class="img-fluid" alt="Responsive image"style="width:100%;">';
+    echo '<img src="/imagenes/dibujo-1.svg" class="img-fluid" alt="Responsive image" style="width:100%;>';
+    echo '<div style="background: #F2C115; height:60px;" ></div>';
+    echo '<div  style="background: white; text-align: center; padding:10px;" >
+          <div class="row">
+            <div class="col">
+              <h2>Sube tus reviews</h2>
+              <img src="/imagenes/blog.svg"  alt="Responsive image" height=\'150px\' weight=\'150px\'>
+            </div>
+            <div class="col">
+              <h2>Comenta los productos</h2>
+              <img src="/imagenes/talk.svg"  alt="Responsive image"height=\'150px\' weight=\'150px\'>
+            </div>
+            <div class="col">
+             <h2>¡Vótalos!</h2>
+             <img src="/imagenes/thumbs.svg" alt="Responsive image" height=\'150px\' weight=\'150px\'>
+            </div>
+          </div>
+          </div>'; 
 }
 ?>
 <div class="container">
   
-      <h2 class="tituloHome">Últimos Reviews</h2>
+      <h2 class="tituloHome">Últimos Reviews<span class="miniatura"><?php if($pagina_actual !=1){echo ' (Página ' .$pagina_actual .')';}?></span></h2>
   
 
 
@@ -23,9 +40,9 @@ foreach($productos as $producto){
 
 
     if(isset($_SESSION["usuario"]) && $usuarioSesion = $_SESSION["usuario"]){
-      $botones_votos = '<form style="display: inline;" method="POST"><input type="hidden" name="producto_id" value="' . $producto['id'] . '"/>
-  <button type="submit" class="btn btn-success" id="megusta" ' . $disabled . ' name="voto_producto" value="1"><img src="/prod/detalleproductos/icons8-me-gusta-64.png" alt="megusta" height="20" width="20"></button>
-  <button type="submit" class="btn btn-danger" id="nomegusta" ' . $disabled . ' name="voto_producto" value="-1"><img src="/prod/detalleproductos/icons8-pulgar-hacia-abajo-64.png" alt="nomegusta" height="20" width="20"></button>
+      $botones_votos = '<form style="display: inline; margin-top:5px;" method="POST"><input type="hidden" name="producto_id" value="' . $producto['id'] . '"/>
+  <button type="submit" class="btn btn-success" id="megusta" ' . $disabled . ' name="voto_producto" value="1"><img src="/imagenes/like.svg" alt="megusta" height="30" width="30"></button>
+  <button type="submit" class="btn btn-danger" id="nomegusta" ' . $disabled . ' name="voto_producto" value="-1"><img src="/imagenes/nogusta.svg" alt="nomegusta" height="30" width="30"></button>
   </form>';
 }else{
   $botones_votos = "";

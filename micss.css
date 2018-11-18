@@ -55,9 +55,18 @@ body{
 }
 .estiloletra{
     font-weight: bolder;
-    color: red;
+    font-size: 25px;
+    color: #51714C;
 
 }
+
+.descripcion{
+
+    font-size: 25px;
+    color: #51714C;
+
+}
+
 .col_bg{
     background: #D5D8DC;
     color:#030303;
@@ -181,3 +190,41 @@ a{
 .fondooscuro  {
     color: white;
    }
+
+   .miniatura{
+       font-size: 12px;
+       color: #ccc;
+   }
+
+   .coments{
+       background: white;
+       border-radius: 5px;
+       box-shadow: 5px 5px 15px #00000077;
+       padding:5px;
+   }
+
+   .comentarios{
+    background: #F1F79E;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px #00000077;
+    padding:5px;
+}
+
+
+   .votos{
+       display: inline-block;
+       margin-left:65px;
+   }
+   #megusta{
+       margin-top:10px;
+     
+   }
+   #nomegusta{
+    margin-top:10px;
+  
+}
+.apartados{
+    color:#135D4D;
+    font-size: 20px;
+    font-weight: 300;
+}
