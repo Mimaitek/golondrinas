@@ -59,7 +59,7 @@ $comentarios = recuperarComentarios($ID_PRODUCTO);
 
 foreach($comentarios as $comentario){
     echo '<div style="text-align:left; margin-top:10px;"><div class="container coments">
-    <div class="row">
+    <div class="row" style="margin-left: 20px !important;">
         <div class="col-12"><br><span class="apartados">Fecha publicación </span>'.
         $comentario['fecha'] .
        '</div><div class="col-8">'. 
@@ -67,22 +67,24 @@ foreach($comentarios as $comentario){
         '</div><div class="col-4"><span class="apartados">Usuario: </span> '.
 
         ucfirst($comentario['usuario']). '<br><br>  <button type="button" class="btn btn-outline-success">Puntuación total: ' . votosComentario($comentario['id']) . '</button>'.
-       
-        '</div>
+        $disabled = '';
+        if(comentarioFueVotado($comentario['id'])) {
+            $disabled = ' disabled ';
+        }
+ 
+ 
+        if($usuarioSesion = $_SESSION["usuario"]){
+         echo '<form method="POST"><div class="votos">
+         <input type="hidden" name="comentario" value="' . $comentario['id'] . '"/>
+        <button type="submit" class="btn btn-success" id="megusta" ' . $disabled . 'name="voto-comentario" value="1"><img src="/imagenes/like.svg" alt="megusta" height="30" width="30"></button>
+        <button type="submit" class="btn btn-danger" id="nomegusta" ' . $disabled . 'name="voto-comentario" value="-1"><img src="/imagenes/nogusta.svg" alt="nomegusta" height="30" width="30"></button></div>';
+    }
+     echo ' </div>
+    
+        </div>
        </div>
-       </div></div>';
-       $disabled = '';
-       if(comentarioFueVotado($comentario['id'])) {
-           $disabled = ' disabled ';
-       }
-
-
-       if($usuarioSesion = $_SESSION["usuario"]){
-        echo '<form method="POST"><div class="votos">
-        <input type="hidden" name="comentario" value="' . $comentario['id'] . '"/>
-    <button type="submit" class="btn btn-success" id="megusta" ' . $disabled . 'name="voto-comentario" value="1"><img src="/imagenes/like.svg" alt="megusta" height="30" width="30"></button>
-    <button type="submit" class="btn btn-danger" id="nomegusta" ' . $disabled . 'name="voto-comentario" value="-1"><img src="/imagenes/nogusta.svg" alt="nomegusta" height="30" width="30"></button></div>';
-       }
+       </div>';
+       
       echo '</form><hr>';
 }
 
@@ -96,16 +98,16 @@ foreach($comentarios as $comentario){
 if($usuarioSesion = $_SESSION["usuario"]){
     echo "<form method='POST'><div class='container comentarios'><fieldset>
     <legend>Envía un comentario</legend>
-    <textarea rows='4' cols='110' autofocus placeholder='Escribe tu comentario...' style='overflow:auto;resize:none' id='comentarios'  name='comentariosProducto'
+    <textarea rows='4' cols='105' autofocus placeholder='Escribe tu comentario...' style='overflow:auto; resize:none; margin: 20px;' id='comentarios'  name='comentariosProducto'
     onkeyup='window._comentarioValido = validacion(\"comentarios\", \"mensajecomentarios\", \"\"); checkeaBotonSubmit();'></textarea><hr>
     <input class='btn btn-success btn-lg' type='submit' value='enviar' name='enviar' id='botonenvio' disabled></fieldset></div></form>
     <div id=\"mensajecomentarios\"></div>";
 }else{
-    echo "<div class='detallecomentario'><fieldset>
+    echo "<div><fieldset style='text-align: center;'>
     <legend>Envía un comentario</legend>
     <p>Necesitas estár registrado para comentar</p>
     <a href='/login/'><button>Accede</button></a>
-    <a href='/registro/'><button>Registrate</button></a>";
+    <a href='/registro/'><button>Registrate</button></a></div>";
 
 }
 

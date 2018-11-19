@@ -39,7 +39,7 @@
                     <input type="text" class="form-control" id="producto" name="producto" aria-describedby="Help" placeholder=""
                      onkeyup="window.__campos.producto = validacion('producto', 'mensajeproducto', 'Es necesario incluir el nombre del producto'); checkeaBotonSubmit();"
                      onblur="window.__campos.producto = validacion('producto', 'mensajeproducto', 'Es necesario incluir el nombre del producto'); checkeaBotonSubmit();">
-                    <small id="emailHelp" class="form-text text-muted">Introduce el nombre del producto.</small>
+                    <small id="emailHelp" >Introduce el nombre del producto.</small>
                     <p id="mensajeproducto" class="errorproductos"></p>
                 </div>
                 <div class="form-group">
@@ -62,7 +62,7 @@
                     <textarea class="form-control" id="comentarios" name="comentarios" rows="3" 
                     onkeyup="window.__campos.comentarios = validacion('comentarios', 'mensajecomentarios', 'Es necesario incluir una descripción'); checkeaBotonSubmit();"
                     onblur="window.__campos.comentarios = validacion('comentarios', 'mensajecomentarios', 'Es necesario incluir una descripción'); checkeaBotonSubmit();"></textarea>
-                    <small id="fileHelp" class="form-text text-muted">Describe y analiza al producto!!!</small>
+                    <small id="fileHelp" >Describe y analiza al producto!!!</small>
                     <p id="mensajecomentarios" class="errorproductos"></p>
                 </div>
                 <div class="form-group">

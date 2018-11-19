@@ -19,11 +19,11 @@ if (!isset($_SESSION)) {
      <div class="col-4">
         <div class="form-group">
           <label for="usuario">Usuario</label>
-          <input type="text" class="form-control" id="usuario" placeholder="usuario" name="usuario">
+          <input type="text" class="form-control" id="usuario" placeholder="usuario" name="usuario" style="color: black; !important">
         </div>
         <div class="form-group">
           <label for="contrasena">Contraseña</label>
-          <input type="password" class="form-control" id="contrasena" placeholder="Contraseña" name="contrasena">
+          <input type="password" class="form-control" id="contrasena" placeholder="Contraseña" name="contrasena" style="color: black; !important">
         </div>
         
         <button type="submit" class="btn btn-primary" name="enviar">Entrar</button>
