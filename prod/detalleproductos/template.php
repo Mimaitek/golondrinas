@@ -66,7 +66,20 @@ foreach($comentarios as $comentario){
        str_replace("\n", "<br/>", $comentario['contenido'])    .
         '</div><div class="col-4"><span class="apartados">Usuario: </span> '.
 
-        ucfirst($comentario['usuario']). '<br><br>  <button type="button" class="btn btn-outline-success">Puntuación total: ' . votosComentario($comentario['id']) . '</button>'.
+        ucfirst($comentario['usuario']). '<br><br>  <button type="button"';
+
+        if(votosComentario($comentario['id'])<-5){
+            echo "class='btn btn-outline-danger'";
+        }
+        if(votosComentario($comentario['id'])>12){
+            echo "class='btn btn-outline-success'";
+        }
+        if((votosComentario($comentario['id'])>=-5) && (votosComentario($comentario['id'])<=12)){
+            echo "class='btn btn-outline-warning'";
+        }
+         echo '>Puntuación total: ' . votosComentario($comentario['id']) . '</button>'.
+        
+        
         $disabled = '';
         if(comentarioFueVotado($comentario['id'])) {
             $disabled = ' disabled ';
@@ -103,11 +116,11 @@ if($usuarioSesion = $_SESSION["usuario"]){
     <input class='btn btn-success btn-lg' type='submit' value='enviar' name='enviar' id='botonenvio' disabled></fieldset></div></form>
     <div id=\"mensajecomentarios\"></div>";
 }else{
-    echo "<div><fieldset style='text-align: center;'>
+    echo "<div class='comentarios animated bounceIn delay-4s'><fieldset style='text-align: center;'>
     <legend>Envía un comentario</legend>
     <p>Necesitas estár registrado para comentar</p>
-    <a href='/login/'><button>Accede</button></a>
-    <a href='/registro/'><button>Registrate</button></a></div>";
+    <a href='/login/'><button class='btn  btn-lg' style='background:#236350; color: white;'>Accede</button></a>
+    <a href='/registro/'><button class='btn  btn-lg' style='background:#236350; color:white;'>Registrate</button></a></div>";
 
 }
 

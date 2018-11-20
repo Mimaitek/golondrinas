@@ -229,3 +229,9 @@ a{
     font-weight: 300;
     margin: 20px;
 }
+#negativo{
+    background: #FE7D7D !important;
+}
+#positivo{
+    background:7DFE8D !important;
+}
