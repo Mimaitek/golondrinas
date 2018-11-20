@@ -12,7 +12,7 @@
         <div class="col">
             <div class="bloques">
                 <h5 class="text-left">Si deseas ponerte en contacto con nosotros puedes hacerlo a través del correo electrónico</h5><br><br>
-                <button type="button" class="btn btn-primary btn-lg" id="contacto" href="mailto:somos.genios.del.marketing@gmail.com" target="_blank" >Contacta con Genios!!</button>
+                <a href="mailto:somos.genios.del.marketing@gmail.com" target="_blank" ><button type="button" class="btn btn-primary btn-lg" id="contacto">Contacta con Genios!!</button></a>
             </div>
         </div>
 
