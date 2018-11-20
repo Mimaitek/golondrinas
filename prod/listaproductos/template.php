@@ -57,7 +57,7 @@ foreach($productos as $producto){
                             
                     <br>
                     
-                    <button class="btn btn-outline-warning"><a href="' .'/detalleproductos/' .$producto["id"]. '">Leer más</a></button>
+                    <a href="' .'/detalleproductos/' .$producto["id"]. '"><button class="btn btn-outline-warning">Leer más</button></a>
                     ' .$botones_votos. '
                     </div>
                      <div class="col" style="text-align:center; padding-top: 20px; margin:10px;">
