@@ -235,3 +235,10 @@ a{
 #positivo{
     background:7DFE8D !important;
 }
+#categorias{
+    background: yellow;
+
+    height: 80px;
+    text-align: center;
+    padding: 25px;
+}

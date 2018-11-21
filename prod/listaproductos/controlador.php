@@ -21,11 +21,17 @@ $pagina_siguiente = true;
 $pagina_actual = 1;
 $pagina_anterior = true;
 
+$categoria = "all";
+
 $parts = parse_url(RUTA_ACTUAL);
 if(isset($parts['query'])) {
     parse_str($parts['query'], $parametros_url);
     if(isset($parametros_url["page"])){
         $pagina_actual = $parametros_url['page'];
+    }
+
+    if(isset($parametros_url["categoria"])){
+        $categoria = $parametros_url['categoria'];
     }
 
 
@@ -39,12 +45,25 @@ require("template.php");
 
 function getProductos(){
 
-    global $pagina_actual, $pagina_siguiente;
-    $limit = 6;
+    global $pagina_actual, $pagina_siguiente, $categoria;
+    $limit = 5;
     $offset = $limit*($pagina_actual -1);
 
     $conexion = getConexion();
-    $consulta = "SELECT * FROM productos ORDER BY id DESC LIMIT $offset, $limit";
+
+    switch ($categoria){
+        case "tecnologia":
+        case "servicios":
+        case "alimentacion":
+        case "ocio":
+        case "deportes":
+            $consulta = "SELECT * FROM productos WHERE tipo_producto ='$categoria' ORDER BY id DESC LIMIT $offset, $limit";
+            break;
+        default:
+            $categoria="all";
+             $consulta = "SELECT * FROM productos ORDER BY id DESC LIMIT $offset, $limit";
+    }
+
     $resultado = mysqli_query($conexion,$consulta) or die("Consulta errónea ");
 
     $productos = array();

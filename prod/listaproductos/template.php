@@ -20,9 +20,21 @@ if($pagina_actual ==1){
           </div>'; 
 }
 ?>
+
+<div  id="categorias">
+  <div class="container"> 
+     <div class="row">
+     <div class="col"><a href="/?categoria=all">Todas <img src="/imagenes/arrow.svg" height="15px" width="15px" ></a></div>
+      <div class="col"><a href="/?categoria=tecnologia">Tecnología <img src="/imagenes/arrow.svg" height="15px" width="15px""></a></div>
+      <div class="col"><a href="/?categoria=alimentacion">Alimentación <img src="/imagenes/arrow.svg" height="15px" width="15px""></a></div>
+      <div class="col"><a href="/?categoria=servicios">Servicios <img src="/imagenes/arrow.svg" height="15px" width="15px""></a></div>
+      <div class="col"><a href="/?categoria=ocio">Ocio <img src="/imagenes/arrow.svg" height="15px" width="15px""></a></div>
+      <div class="col"><a href="/?categoria=deportes">Deportes <img src="/imagenes/arrow.svg" height="15px" width="15px""></a></div>
+    </div>
+</div>
+</div>
 <div class="container">
-  
-      <h2 class="tituloHome">Últimos Reviews<span class="miniatura"><?php if($pagina_actual !=1){echo ' (Página ' .$pagina_actual .')';}?></span></h2>
+      <h2 class="tituloHome">Categoría de <?php echo ucfirst($categoria); ?><span class="miniatura"><?php if($pagina_actual !=1){echo ' (Página ' .$pagina_actual .')';}?></span></h2>
   
 
 
@@ -78,15 +90,11 @@ foreach($productos as $producto){
 </div>
 <div class="btn-group" role="group" aria-label="Basic example">
 <?php if($pagina_anterior){ 
-  echo '<a class="btn btn-secondary" id="botons" href="/?page='
-  . ($pagina_actual-1)
-  . '">Anterior</a>';
+  echo '<a class="btn btn-secondary" id="botons" href="/?page=' . ($pagina_actual-1) .  '&categoria='.$categoria.'">Anterior</a>';
 } 
 
 if($pagina_siguiente){ 
-  echo '<a class="btn btn-secondary" id="botons2" href="/?page='
-  . ($pagina_actual+1)
-  . '">Siguiente</a>';
+  echo '<a class="btn btn-secondary" id="botons2" href="/?page=' . ($pagina_actual+1) . '&categoria='.$categoria.'">Siguiente</a>';
 
 }
   ?>
