@@ -103,11 +103,11 @@ h1{
 }
 
 #menu{
-    background-color: #F1F79E !important;
+    background-color: #FAB639 !important;
 }
 
 .page-footer {
-    background-color:#F1F79E;
+    background-color:#FAB639;
 }
 .form-group{
     text-align: right;
@@ -236,7 +236,7 @@ a{
     background:7DFE8D !important;
 }
 #categorias{
-    background: yellow;
+    background: #FAB639;
 
     height: 80px;
     text-align: center;

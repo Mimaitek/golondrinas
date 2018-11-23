@@ -1,7 +1,7 @@
 <?php
 if($pagina_actual ==1){
-    echo '<img src="/imagenes/dibujo-1.svg" class="img-fluid" alt="Responsive image" style="width:100%;>';
-    echo '<div style="background: #F2C115; height:60px;" ></div>';
+    echo '<img src="/imagenes/fondo_marketing4.jpg"  class="img-fluid"  alt="Responsive image" style="width:1400px; height:400px";>';
+    echo '<div style="background: #FAB639; height:60px;" ></div>';
     echo '<div  style="background: white; text-align: center; padding:10px;" >
           <div class="row">
             <div class="col">
