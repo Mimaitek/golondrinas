@@ -9,7 +9,7 @@ if($pagina_actual ==1){
               <img src="/imagenes/blog.svg"  alt="Responsive image" height=\'150px\' weight=\'150px\'>
             </div>
             <div class="col">
-              <h2>Comenta los productos</h2>
+              <h2>¡Comenta! </h2>
               <img src="/imagenes/talk.svg"  alt="Responsive image"height=\'150px\' weight=\'150px\'>
             </div>
             <div class="col">
