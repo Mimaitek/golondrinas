@@ -17,7 +17,7 @@
             <div class="bloques"  >
                 <div style="text-align: right;" class="animated fadeInUp delay-2s">
                     <img src="/imagenes/registro.svg" class="img-thumbnail" alt="reg" width="80px" height="80px">
-                    <h3 class="text-right">2. ¡Regístrate! Podrás subir tus reviews y conocer otros usuarios</h3>
+                    <h3 class="text-right">2. ¡Regístrate! Podrás subir tus reviews y dar a conocer productos</h3>
                     <p class="lineaverde"></p>
                 </div>
                 

@@ -77,7 +77,7 @@ Y el enlace directo a varias secciones de la web como "Sobre nosotros, Productos
     </div>
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">© 2018 Copyright:
-      <a href="avisolegal/"> Aviso Legal Genios del Marketing</a>
+      <a href="/avisolegal/"> Aviso Legal Genios del Marketing</a>
     </div>
   </footer>
   </div>

@@ -1,18 +1,18 @@
 
-<div style="padding: 40px;">
+<div style="padding: 40px; color: white;">
 
 <h1 class="avisolegal">DATOS IDENTIFICATIVOS</h1>
 
 <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios 
 de la Sociedad de la Información y del Comercio Electrónico, se señalan los siguientes datos: la empresa titular de 
-dominio web es www.genios-del-marketing.diamobile.com:81/en y Correo electrónico somos.genios.del.marketing@gmail.com</p>
+dominio web es www.genios-del-marketing.diamobile.com:81/en y Correo electrónico somos.genios.del.marketing@gmail.com</p><br>
 
 <h1 class="avisolegal">USUARIOS</h1>
 
 <p>El acceso y/o uso de este portal atribuye la condición de Usuario, que acepta los términos y condiciones generales de
- uso para poder usar todos los servicios e información que se facilitan desde el portal. Dichas condiciones se exponen a continuación:</p>
+ uso para poder usar todos los servicios e información que se facilitan desde el portal. Dichas condiciones se exponen a continuación:</p><br>
 
-<h2 class="avisolegal2">TÉRMINOS Y CONDICIONES</h2>
+<h2 style="text-align:center;">TÉRMINOS Y CONDICIONES</h2>
 
 <p>Las presentes condiciones de uso de la página web, regulan los términos de acceso y uso de Genios del Marketing. El mero acceso 
 o utilización del portal, de todos o parte de sus contenidos y servicios significa la plena aceptación de las presentes condiciones 
@@ -25,9 +25,9 @@ bien por el portal, bien por sus usuarios o por cualquier tercero. No obstante, 
 contenidos y/o servicios pueden encontrarse sometidos a determinadas condiciones específicas.
 
 La empresa se reserva la facultad de modificar en cualquier momento las condiciones generales de uso del portal. 
-En todo caso, se recomienda que consulte periódicamente las presentes condiciones generales de uso del portal, ya que pueden ser modificadas.</p>
+En todo caso, se recomienda que consulte periódicamente las presentes condiciones generales de uso del portal, ya que pueden ser modificadas.</p><br>
 
-<h2 class="avisolegal2">OBLIGACIONES DEL USUARIO</h2>
+<h2 style="text-align:center;">OBLIGACIONES DEL USUARIO</h2>
 
 <p>El usuario deberá respetar en todo momento los términos y condiciones establecidos en el presente aviso legal.
  De forma expresa el usuario manifiesta que utilizará el portal de forma diligente y asumiendo cualquier responsabilidad 
@@ -45,9 +45,9 @@ datos o contenidos que sean portadores de virus o cualquier otro código inform�
 para interrumpir, destruir o perjudicar el funcionamiento de cualquier programa o equipo informático o de telecomunicaciones.
 
 El usuario se obliga a indemnizar y a mantener indemnes al portal por cualquier daño, perjuicio, sanción, multa, pena o indemnización
- que tenga que hacer frente el portal.</p>
+ que tenga que hacer frente el portal.</p><br>
 
-<h2 class="avisolegal2">PROTECCIÓN DE DATOS</h2>
+<h2 style="text-align:center;">PROTECCIÓN DE DATOS</h2>
 
 <p>En cumplimiento de lo dispuesto en la Ley Orgánica 15/1999, de 13 de Diciembre, de Protección de Datos de Carácter Personal 
 (LOPD) se informa al usuario que todos los datos que nos proporcione serán incorporados a un fichero, creado y mantenido bajo la 
@@ -56,18 +56,18 @@ en el Registro General de la Agencia Española de Protección de Datos y que, en
 ha obtenido dichos datos de forma legal y cumpliendo las disposiciones establecidas en la normativa de protección de datos de carácter personal.</p>
 
 <p>El encargado del tratamiento única y exclusivamente acederá y tratará los datos contenidos en los ficheros conforme a las instrucciones 
-del responsable y únicamente los utilizará o aplicará para realizar, por cuenta del responsable, los servicios específicamente contratados.</p>
+del responsable y únicamente los utilizará o aplicará para realizar, por cuenta del responsable, los servicios específicamente contratados.</p><br>
 
-<h2 class="avisolegal2">PROPIEDAD INTELECTUAL E INDUSTRIAL</h2>
+<h2 style="text-align:center;">PROPIEDAD INTELECTUAL E INDUSTRIAL</h2>
 
 <p>Genios del Marketing es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos 
 contenidos en la misma. Todos los derechos están reservados.
 En virtud de lo dispuesto en los artículos 8 y 32.1, párrafo segundo, de la Ley de Propiedad Intelectual, quedan expresamente
  prohibidas la reproducción, la distribución y la comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad 
  o parte de los contenidos de esta página web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización 
- de La empresa.</p>
+ de La empresa.</p><br>
 
-<h2 class="avisolegal2">RESPONSABILIDAD</h2>
+<h2 style="text-align:center;">RESPONSABILIDAD</h2>
 
 <p>El portal no garantiza la disponibilidad continua y permanente de los servicios, quedando de este modo exonerado de cualquier r
 esponsabilidad por posibles daños y perjuicios causados como consecuencia de la falta de disponibilidad del servicio por motivos 
@@ -87,9 +87,9 @@ la aplicación no garantiza ni asume responsabilidad alguna respecto a los posib
 
 <p>En todo caso, el portal excluye cualquier responsabilidad por los daños y perjuicios que puedan deberse a la información y/o servicios
  prestados o suministrados por terceros diferentes de la Empresa. Toda la responsabilidad será del tercero ya sea proveedor, 
- colaborador u otro.</p>
+ colaborador u otro.</p><br>
 
-<h2 class="avisolegal2">POLÍTICA DE COOKIES</h2>
+<h2 style="text-align:center;">POLÍTICA DE COOKIES</h2>
 
 <p>La empresa informa de su política de cookies, cumpliendo así con lo previsto en el artículo 22.2 de la Ley 34/2002, de 11 de 
 julio de Servicios de la Sociedad de la Información y de Comercio Electrónico.
@@ -109,9 +109,9 @@ con sus datos personales proporcionados en el momento del registro o la compra.<
 fines anteriormente mencionados. Y asimismo reconoce conocer la posibilidad de rechazar el tratamiento de tales datos o información rechazando 
 el uso de Cookies mediante la selección de la configuración apropiada a tal fin en su navegador. Si bien esta opción de bloqueo de Cookies en 
 su navegador puede no permitirle el uso pleno de todas las funcionalidades de la web. Puede usted permitir, bloquear o eliminar las cookies 
-instaladas en su equipo mediante la configuración de las opciones del navegador instalado en su ordenador.</P>
+instaladas en su equipo mediante la configuración de las opciones del navegador instalado en su ordenador.</p><br>
 
-<h2 class="avisolegal2">LEGISLACIÓN APLICABLE Y JURISDICCIÓN:</h2>
+<h2 style="text-align:center;">LEGISLACIÓN APLICABLE Y JURISDICCIÓN:</h2>
 
 <P>La relación entre Empresa y Usuario se regirá por la normativa española vigente y cualquier controversia se someterá a los Juzgados 
 y tribunales estatales de España</p>
