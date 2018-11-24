@@ -242,3 +242,32 @@ a{
     text-align: center;
     padding: 25px;
 }
+
+
+
+    @media (max-width: 600px) { 
+
+        .divproductos{
+            padding-left: 10px;
+            padding-top:5px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 100%;
+            background-color: f1f79e;
+            box-shadow: 5px 5px 15px #00000077;
+        }
+
+        #categorias{
+            background: #FAB639;
+            height: 150px;
+            text-align: center; 
+        }
+        #categorias img{
+            display:none;
+        }
+
+
+
+
+
+     }

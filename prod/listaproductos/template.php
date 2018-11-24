@@ -1,6 +1,6 @@
 <?php
 if($pagina_actual ==1){
-    echo '<img src="/imagenes/fondo_marketing4.jpg"  class="img-fluid"  alt="Responsive image" style="width:100%; height:500px";>';
+    echo '<img src="/imagenes/fondo_marketing4.jpg"  class="img-fluid"  alt="Responsive image" style="width:100%; height:auto";>';
     echo '<div style="background: #FAB639; height:60px;" ></div>';
     echo '<div  style="background: white; text-align: center; padding:10px;" >
           <div class="row">
@@ -22,7 +22,7 @@ if($pagina_actual ==1){
 ?>
 
 <div  id="categorias">
-  <div class="container"> 
+  <div class="container-fluid"> 
      <div class="row">
      <div class="col"><a href="/?categoria=all">Todas <img src="/imagenes/arrow.svg" height="15px" width="15px" ></a></div>
       <div class="col"><a href="/?categoria=tecnologia">Tecnología <img src="/imagenes/arrow.svg" height="15px" width="15px""></a></div>
@@ -61,7 +61,7 @@ foreach($productos as $producto){
 }
 
     echo '<div class="divproductos">
-              <div class="container-fluid">
+              <div class="container-fluid clearfix visible-xs-block">
                   <div class="row">
                      <div class="col">
                      <h5 style="color: #197575 !important; font-size: 20px; font-weight: bolder;">'. ucfirst ($producto['nombre']) .'</h5>

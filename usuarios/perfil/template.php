@@ -48,5 +48,5 @@ if (!isset($_SESSION)) {
               </div>
           </div>
       </form>
-      <small id="emailHelp" style="color:white; margin-left:50px;" >Introduce tus datos por duplicado  para verificar</small>
+      <small id="emailHelp" style="color:white; margin-left:60px;" >Introduce tus datos por duplicado  para verificar</small>
 </div>

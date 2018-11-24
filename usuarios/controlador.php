@@ -1,4 +1,9 @@
 <?php
+      //Para eliminar la sesión del usuario actual y se produzca un logout 
+      if(RUTA_ACTUAL == '/logout/'){
+        $_SESSION["usuario"]="";
+        header('Location: /');
+      }
       if(RUTA_ACTUAL == '/login/'){
         require('login/controlador.php');
       }
@@ -12,14 +17,6 @@
           require_once('perfil/controlador.php');
         }
       }
-      //Para eliminar la sesión del usuario actual y se produzca un logout 
-      if(RUTA_ACTUAL == '/logout/'){
-        $_SESSION["usuario"]="";
-        Header('Location: /');
-      }
-  
-    
 
- 
 ?>
 
