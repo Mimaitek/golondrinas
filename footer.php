@@ -2,18 +2,12 @@
 Y el enlace directo a varias secciones de la web como "Sobre nosotros, Productos, Contacto y Ayuda" acecesibles a cualquier usuario. -->
 <div id="content"></div>
 <div style="position: relative; bottom: 0; left: 0;right: 0; height:130px" >
-<footer class="page-footer font-small indigo">
+  <footer class="page-footer font-small indigo">
 
     
     <div class="container">
 
       <div class="row text-center d-flex justify-content-center pt-5 mb-3 ">
-       <!-- <div class="col-md-2 mb-3">
-          <h6 class="text-uppercase font-weight-bold">
-            <a href="#!">Sobre Nosotros</a>
-          </h6>
-        </div>-->
-        
         <div class="col-md-2 mb-3">
           <h6 class="text-uppercase font-weight-bold">
             <a href="/">Productos</a>
@@ -53,12 +47,6 @@ Y el enlace directo a varias secciones de la web como "Sobre nosotros, Productos
         <div class="col-md-12"  style="text-align: center";>
 
           <div class="mb-5 flex-center">
-
-            <!-- Facebook 
-            <a class="fb-ic">
-              <i class="fab fa-facebook fa-lg white-text mr-4"> </i>
-            </a>-->
-            <!-- Twitter -->
             <a class="tw-ic" href="https://twitter.com/GeniosdelM" target="_blank">
               <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
             </a>

@@ -38,6 +38,7 @@ body{
     background-color: f1f79e;
     box-shadow: 5px 5px 15px #00000077;
     border-radius: 5px;
+    background-color: #f9f990;
 }
 .divcomentarios{
     border-style: double;
@@ -81,13 +82,6 @@ h1{
     padding: 20px;
   
 }
-
-
-
-
-
-
-
 .container-registro label, .container-registro h1{
     color: white;
 }
@@ -229,10 +223,9 @@ a{
 }
 #categorias{
     background: #FAB639;
-
-    height: 80px;
+    width:100%;
     text-align: center;
-    padding: 25px;
+    padding: 5px;
 }
 
 
@@ -251,7 +244,6 @@ a{
 
         #categorias{
             background: #FAB639;
-            height: 150px;
             text-align: center; 
         }
         #categorias img{

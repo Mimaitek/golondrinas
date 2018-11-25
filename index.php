@@ -7,6 +7,7 @@ include("utiles.php");
 ?>
 <!--Con este archivo creamos las cabeceras de las páginas además de enrutar hacia las diferentes secciones a través del controlador, cargando los controladores 
 de las diferentes secciones de la web-->
+<!DOCTYPE html>
 <html>
   <head>
     <title>Genios del Marketing</title>
@@ -22,7 +23,9 @@ de las diferentes secciones de la web-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   </head>
   <body>
+  
   <?php
+  //creamos un array de errores y mensajes para mostrarlos por pantalla
   $mensajes = array();
   $errores = array();
   function addError($error) {

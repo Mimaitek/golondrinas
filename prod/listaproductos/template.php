@@ -3,20 +3,23 @@ if($pagina_actual ==1){
     echo '<img src="/imagenes/fondo_marketing4.jpg"  class="img-fluid"  alt="Responsive image" style="width:100%; height:auto";>';
     echo '<div style="background: #FAB639; height:60px;" ></div>';
     echo '<div  style="background: white; text-align: center; padding:10px;" >
-          <div class="row">
-            <div class="col">
+            <div class="row container-fluid" style="text-align: center;">
+            
+              <div class="col">
               <h2>Sube tus reviews</h2>
               <img src="/imagenes/blog.svg"  alt="Responsive image" height=\'150px\' weight=\'150px\'>
-            </div>
-            <div class="col">
+              </div>
+
+              <div class="col">
               <h2>¡Comenta! </h2>
               <img src="/imagenes/talk.svg"  alt="Responsive image"height=\'150px\' weight=\'150px\'>
+              </div>
+              
+              <div class="col">
+              <h2>¡Vótalos!</h2>
+              <img src="/imagenes/thumbs.svg" alt="Responsive image" height=\'150px\' weight=\'150px\'>
+              </div>
             </div>
-            <div class="col">
-             <h2>¡Vótalos!</h2>
-             <img src="/imagenes/thumbs.svg" alt="Responsive image" height=\'150px\' weight=\'150px\'>
-            </div>
-          </div>
           </div>'; 
 }
 ?>
