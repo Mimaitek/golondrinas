@@ -83,22 +83,16 @@ h1{
 }
 
 
-.fondo-perfil label, .fondo-perfil h1{
-    color:white;
-}
 
 
-.container-registro {
-    padding:40px;
-    padding-top:20px;
-   
-  }
+
+
 
 .container-registro label, .container-registro h1{
     color: white;
 }
 .container-productos{
-    padding: 70px;
+    padding: 10px;
 
 }
 
@@ -183,9 +177,7 @@ a{
     text-align: center;
 }
 
-.fondooscuro * {
- color: white;
-}
+
 
 .fondooscuro  {
     color: white;

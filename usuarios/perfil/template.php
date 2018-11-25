@@ -4,11 +4,11 @@ if (!isset($_SESSION)) {
 }
 ?>
  <!--Template para modificar los datos del usuario-->
- <div class="fondo-perfil">
+ <div class="container" style="color: white;">
  
 
-      <h1>Edita tu perfil <?php echo ucfirst($_SESSION["usuario"]);?></h1>
-      <h4 style="text-align: right; color: white; padding-right:25px;"><?php echo $email_usuario; ?> </h4><br><br><br>
+      <h3 style="text-align: right; color: white; padding:20px;">Edita tu perfil <?php echo ucfirst($_SESSION["usuario"]);?></h3>
+      <h4 style="text-align: right; color: white; padding:20px;"><?php echo $email_usuario; ?> </h4><br><br><br>
 
       <form action="#" method="POST">
           <div class="container">

@@ -1,11 +1,11 @@
 
 <!--Template para formalizar el registro en la web-->
 
-  <div class="container container-registro">
 
-      <h1>Registrate</h1>
+
+      <h1 style="color:white;">Regístrate</h1>
       <form action="#" method="POST">
-          <div class="container">
+          <div class="container-fluid" style="color:white; padding-left:30px;">
               <div class="row">
                   <div class="col-8">
                       <div class="form-group">
@@ -39,4 +39,4 @@
               </div>
           </div>
       </form>
-  </div>
+
