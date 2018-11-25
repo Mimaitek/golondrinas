@@ -43,14 +43,13 @@ de las diferentes secciones de la web-->
   ?>
   <?php
     if(RUTA_ACTUAL == '/logout/'){
-        require_once('usuarios/controlador.php');
+      require('menu.php');
+      require_once('usuarios/controlador.php');
         
-    }
-        require('menu.php');?>
+    } else {
+
+    require('menu.php');
   
-
-
-    <?php
     //Dependiendo de la ruta cargaremos un controlador u otro, lo que nos permitirá ejecutar el diferente codigo, administrado por otro controlador propio de la sección.
      if(RUTA_ACTUAL == '/'  ||  (strrpos(RUTA_ACTUAL, '/?') == 0) && is_int(strrpos(RUTA_ACTUAL, '/?'))){
       require_once('prod/controlador.php');
@@ -80,6 +79,7 @@ de las diferentes secciones de la web-->
       elseif(strrpos(RUTA_ACTUAL, '/detalleproductos/') == 0){
         require('prod/controlador.php');
       }
+    }
 
     ?>
     <!--Aqui añado el footer para completar la web, y añado utiles donde estan alojados los mensajes de error-->
