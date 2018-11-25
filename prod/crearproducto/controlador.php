@@ -115,10 +115,8 @@ function insertarProducto($nombre, $tipo_producto, $comentarios){
 
 
 function aniadeFotoProducto($id_producto, $fichero, $tipo) {
-    echo "aniade foto producto";
-    var_dump($id_producto);
-    var_dump($fichero);
-    var_dump($tipo);
+   
+   
     $fecha = fechaHoy();
 
     $nombre_fichero = $fichero["name"];
@@ -129,7 +127,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
     copy($ruta, $nueva_ruta);
     chmod($nueva_ruta, 0644);
 
-    var_dump($nueva_ruta);
+    
 
     if($fichero) {
         $conexion = getConexion();
@@ -162,8 +160,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
                 $marketing_foto = $_FILES["marketing_foto"];
                 $producto_foto = $_FILES["producto_foto"];
 
-                var_dump($marketing_foto);
-                var_dump($producto_foto);
+               
 
                 $conexion = getConexion();
                 $id_usuario = $_SESSION["id_usuario"];
@@ -171,7 +168,7 @@ function aniadeFotoProducto($id_producto, $fichero, $tipo) {
                 $resultado = mysqli_query($conexion, $consulta) or die (mysqli_error($conexion));
                 $last_id = mysqli_insert_id($conexion);
 
-                var_dump($last_id);
+               
 
         
             addMensaje("Enhorabuena ". ucfirst($_SESSION["usuario"])  . " Pronto subiremos tu publicación");

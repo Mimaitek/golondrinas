@@ -143,7 +143,7 @@ window.cookieconsent.initialise({
     "message": "Esta web utiliza cookies para asegurarse de que consigues la mejor experiencia.",
     "dismiss": "Acepto",
     "link": "Leer más",
-    "href": "/avisolegal.php"
+    "href": "https://genios-del-marketing.diamobile.com:444/avisolegal/"
   }
 })});
 </script>
